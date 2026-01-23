@@ -1,0 +1,3 @@
+module OmniSlideTV {
+    header "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/include/OmniSlideTV-Swift.h"
+}

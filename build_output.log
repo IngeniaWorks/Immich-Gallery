@@ -1,0 +1,715 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project "Immich Gallery.xcodeproj" -scheme "Immich Gallery" -configuration Debug -destination "platform=tvOS Simulator,name=Apple TV" build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  ImmichPhotos: /Users/sander/dev/Immich Photos/ImmichPhotos @ local
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (4 targets)
+    Target 'Immich Gallery' in project 'Immich Gallery'
+        ➜ Explicit dependency on target 'TopShelfExtension' in project 'Immich Gallery'
+        ➜ Explicit dependency on target 'ImmichPhotos' in project 'ImmichPhotos'
+    Target 'ImmichPhotos' in project 'ImmichPhotos'
+        ➜ Explicit dependency on target 'ImmichPhotos' in project 'ImmichPhotos'
+    Target 'ImmichPhotos' in project 'ImmichPhotos' (no dependencies)
+    Target 'TopShelfExtension' in project 'Immich Gallery' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/sander/dev/Immich-Gallery/Immich Gallery/Preview Content/Preview Assets.xcassets /Users/sander/dev/Immich-Gallery/Immich Gallery/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: a11ab00d3c03b12af49e438bd333b518
+Build description path: /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/XCBuildData/a11ab00d3c03b12af49e438bd333b518.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-080c9acb371011151a58bc032572b023.sdkstatcache
+    cd /Users/sander/dev/Immich-Gallery/Immich\ Gallery.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -o /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-080c9acb371011151a58bc032572b023.sdkstatcache
+
+ProcessProductPackaging /Users/sander/dev/Immich-Gallery/TopShelfExtension/TopShelfExtension.entitlements /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Entitlements:
+    
+    {
+}
+    
+    builtin-productPackagingUtility /Users/sander/dev/Immich-Gallery/TopShelfExtension/TopShelfExtension.entitlements -entitlements -format xml -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent
+
+ProcessProductPackaging /Users/sander/dev/Immich-Gallery/TopShelfExtension/TopShelfExtension.entitlements /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2F58933V55.com.sanketh.dev.Immich-Gallery.TopShelfExtension";
+    "com.apple.security.application-groups" =     (
+        "group.com.sanketh.dev.Immich-Gallery"
+    );
+    "keychain-access-groups" =     (
+        "2F58933V55.com.sanketh.dev.Immich-Gallery"
+    );
+}
+    
+    builtin-productPackagingUtility /Users/sander/dev/Immich-Gallery/TopShelfExtension/TopShelfExtension.entitlements -entitlements -format xml -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent
+
+WriteAuxiliaryFile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftConstValuesFileList (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    write-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftFileList (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    write-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftFileList
+
+WriteAuxiliaryFile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.LinkFileList (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    write-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.LinkFileList
+
+ProcessProductPackagingDER /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent.der (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /usr/bin/derq query -f xml -i /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent.der --raw
+
+ProcessProductPackagingDER /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent.der (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /usr/bin/derq query -f xml -i /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent.der --raw
+
+ProcessInfoPlistFile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/Info.plist /Users/sander/dev/Immich-Gallery/TopShelfExtension/Info.plist (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-infoPlistUtility /Users/sander/dev/Immich-Gallery/TopShelfExtension/Info.plist -producttype com.apple.product-type.app-extension -expandbuildsettings -format binary -platform appletvsimulator -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/Info.plist
+
+Ld /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/__preview.dylib normal (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos18.2-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -O0 -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -install_name @rpath/TopShelfExtension.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/__preview.dylib
+
+Ld /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.o normal (in target 'ImmichPhotos' from project 'ImmichPhotos')
+    cd /Users/sander/dev/Immich\ Photos/ImmichPhotos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos18.0-simulator -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -O0 -w -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk/Developer/Library/Frameworks -filelist /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos.swiftmodule @/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos-linker-args.resp -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.o
+
+Ld /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib normal (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos18.2-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -O0 -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -filelist /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension.LinkFileList -install_name @rpath/TopShelfExtension.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/../../Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension_dependency_info.dat -fapplication-extension -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension.swiftmodule @/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension-linker-args.resp -Xlinker -alias -Xlinker _NSExtensionMain -Xlinker ___debug_main_executable_dylib_entry_point -framework TVServices -Xlinker -no_adhoc_codesign -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib
+
+ProcessProductPackaging /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich\ Gallery.entitlements /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Entitlements:
+    
+    {
+}
+    
+    builtin-productPackagingUtility /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich\ Gallery.entitlements -entitlements -format xml -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent
+
+ProcessProductPackaging /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich\ Gallery.entitlements /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2F58933V55.com.sanketh.dev.Immich-Gallery";
+    "com.apple.security.application-groups" =     (
+        "group.com.sanketh.dev.Immich-Gallery"
+    );
+    "keychain-access-groups" =     (
+        "2F58933V55.com.sanketh.dev.Immich-Gallery"
+    );
+}
+    
+    builtin-productPackagingUtility /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich\ Gallery.entitlements -entitlements -format xml -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent.der (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /usr/bin/derq query -f xml -i /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app.xcent.der --raw
+
+ProcessProductPackagingDER /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent.der (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /usr/bin/derq query -f xml -i /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent.der --raw
+
+SwiftDriver Immich\ Gallery normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Immich_Gallery -Onone -enforce-exclusivity\=checked @/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -target arm64-apple-tvos18-simulator -g -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/PackageFrameworks -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -emit-localized-strings -emit-localized-strings-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-080c9acb371011151a58bc032572b023.sdkstatcache -output-file-map /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery_const_extract_protocols.json -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-generated-files.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-own-target-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery-114a120a1a190f53ea9cdc9ad471ff27-VFS-appletvsimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-project-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/include -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources-normal/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery-Swift.h -working-directory /Users/sander/dev/Immich-Gallery -experimental-emit-module-separately -disable-cmo
+
+CompileAssetCatalogVariant thinned /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Preview\ Content/Preview\ Assets.xcassets /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Assets.xcassets (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Preview\ Content/Preview\ Assets.xcassets /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Assets.xcassets --compile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_generated_info.plist_thinned --app-icon App\ Icon\ \&\ Top\ Shelf\ Image --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration AppleTV5,3 --filter-for-device-os-version 26.2 --development-region en --leaderboard-identifier-prefix Immich_Gallery.game-center.leaderboard. --leaderboard-set-identifier-prefix Immich_Gallery.game-center.leaderboard-set. --target-device tv --minimum-deployment-target 18 --platform appletvsimulator
+/* com.apple.actool.document.warnings */
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Assets.xcassets:./App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/(null)[2d][background 1.jpg]: warning: The image set "Content" has an unassigned child.
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Assets.xcassets:./App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/(null)[2d][background 1.jpg]: warning: The image set "Content" has an unassigned child.
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Assets.xcassets:./App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/(null)[2d][background 1.jpg]: warning: The image set "Content" has an unassigned child.
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Assets.xcassets:./App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/(null)[2d][background 1.jpg]: warning: The image set "Content" has an unassigned child.
+/* com.apple.actool.compilation-results */
+/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich Gallery.build/Debug-appletvsimulator/Immich Gallery.build/assetcatalog_generated_info.plist_thinned
+/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich Gallery.build/Debug-appletvsimulator/Immich Gallery.build/assetcatalog_output/thinned/Assets.car
+
+
+ExtractAppIntentsMetadata (in target 'ImmichPhotos' from project 'ImmichPhotos')
+    cd /Users/sander/dev/Immich\ Photos/ImmichPhotos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name ImmichPhotos --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk --xcode-version 17C52 --platform-family tvOS --deployment-target 18.0 --bundle-identifier immichphotos.ImmichPhotos --output /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.appintents --target-triple arm64-apple-tvos18.0-simulator --binary-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.o --dependency-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos_dependency_info.dat --stringsdata-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos.SwiftFileList --metadata-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/ImmichPhotos.DependencyMetadataFileList --static-metadata-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/ImmichPhotos.DependencyStaticMetadataFileList --swift-const-vals-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/ImmichPhotos.build/Debug-appletvsimulator/ImmichPhotos.build/Objects-normal/arm64/ImmichPhotos.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-01-22 00:39:44.801 appintentsmetadataprocessor[55169:15248349] Starting appintentsmetadataprocessor export
+2026-01-22 00:39:44.921 appintentsmetadataprocessor[55169:15248349] Extracted no relevant App Intents symbols, skipping writing output
+
+ConstructStubExecutorLinkFileList /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-ExecutorLinkFileList-normal-arm64.txt (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    construct-stub-executor-link-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library without Swift entry point. (in target 'TopShelfExtension' from project 'Immich Gallery')
+
+Ld /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension normal (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos18.2-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -O0 -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/../../Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_entry -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-DebugEntryPoint-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex-Simulated.xcent.der /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension
+
+ExtractAppIntentsMetadata (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name TopShelfExtension --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk --xcode-version 17C52 --platform-family tvOS --deployment-target 18.2 --bundle-identifier com.sanketh.dev.Immich-Gallery.TopShelfExtension --output /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex --target-triple arm64-apple-tvos18.2-simulator --binary-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension --dependency-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension_dependency_info.dat --stringsdata-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension.SwiftFileList --metadata-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.DependencyMetadataFileList --static-metadata-file-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.DependencyStaticMetadataFileList --swift-const-vals-list /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/Objects-normal/arm64/TopShelfExtension.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-01-22 00:39:44.912 appintentsmetadataprocessor[55173:15248378] Starting appintentsmetadataprocessor export
+2026-01-22 00:39:44.913 appintentsmetadataprocessor[55173:15248378] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/TopShelfExtension.debug.dylib
+
+RegisterExecutionPolicyException /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.o (in target 'ImmichPhotos' from project 'ImmichPhotos')
+    cd /Users/sander/dev/Immich\ Photos/ImmichPhotos
+    builtin-RegisterExecutionPolicyException /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/ImmichPhotos.o
+
+CodeSign /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/__preview.dylib (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex/__preview.dylib
+
+CodeSign /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex (in target 'TopShelfExtension' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/TopShelfExtension.build/TopShelfExtension.appex.xcent --timestamp\=none --generate-entitlement-der /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/TopShelfExtension.appex
+
+Ld /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app/__preview.dylib normal (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos18-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -O0 -L/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/PackageFrameworks -F/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -install_name @rpath/Immich\ Gallery.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app/__preview.dylib
+
+SwiftCompile normal arm64 Compiling\ AppConstants.swift,\ SharedGridView.swift,\ ThumbnailProviders.swift,\ DateFormatter+Extensions.swift,\ GridDisplayableExtensions.swift /Users/sander/dev/Immich-Gallery/Shared/AppConstants.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/SharedGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/ThumbnailProviders.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/DateFormatter+Extensions.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/GridDisplayableExtensions.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Shared/AppConstants.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/SharedGridView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/ThumbnailProviders.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/DateFormatter+Extensions.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/GridDisplayableExtensions.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ ExifInfoOverlay.swift,\ ExploreDetailView.swift,\ ExploreView.swift,\ FoldersView.swift,\ FullScreenImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExifInfoOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FoldersView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FullScreenImageView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExifInfoOverlay.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreDetailView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FoldersView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FullScreenImageView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ UserDefaults.swift,\ Badge.swift,\ AlbumListView.swift,\ AssetGridView.swift,\ AssetThumbnailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/UserDefaults.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/shared/Badge.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AlbumListView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetThumbnailView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/UserDefaults.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/shared/Badge.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AlbumListView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetGridView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetThumbnailView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ AdaptiveBackgroundView.swift,\ ProfileImageView.swift,\ AutoSlideshowTimeoutPicker.swift,\ SettingsView.swift,\ SlideShowSettings.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/AdaptiveBackgroundView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ProfileImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/AutoSlideshowTimeoutPicker.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SettingsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SlideShowSettings.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/AdaptiveBackgroundView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ProfileImageView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/AutoSlideshowTimeoutPicker.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SettingsView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SlideShowSettings.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ ImmichModels.swift,\ PeopleService.swift,\ SearchService.swift,\ SlideshowConfigService.swift,\ StorageMigration.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/ImmichModels.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/PeopleService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SearchService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SlideshowConfigService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/StorageMigration.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/ImmichModels.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/PeopleService.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SearchService.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SlideshowConfigService.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/StorageMigration.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Storage/StorageMigration.swift:42:52: warning: 'getToken(forUserId:)' is deprecated: Token storage moved to Keychain. This method is only for migration.
+                if let token = userDefaultsStorage.getToken(forUserId: user.id) {
+                                                   ^
+
+SwiftCompile normal arm64 Compiling\ InfoRow.swift,\ LockScreenStyleOverlay.swift,\ MemoriesDetailView.swift,\ MemoriesSlideshowView.swift,\ MemoriesView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/InfoRow.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/LockScreenStyleOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/sander/dev/Immich-Gallery/Shared/AppConstants.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/SharedGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/ThumbnailProviders.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/DateFormatter+Extensions.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/GridDisplayableExtensions.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/ImmichModels.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/NavigationStyle.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/UserModels.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Protocols/UserStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AlbumService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetProvider.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AuthenticationService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ExploreService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/FolderService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ImageColorExtractor.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/MockImmichService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/NetworkService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/PeopleService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SearchService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SlideshowConfigService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/StatsCache.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/StatsService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/TagService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ThumbnailCache.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/UserManager.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/HybridUserStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/KeychainTokenStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/StorageMigration.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/UserDefaultsStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/AdaptiveBackgroundView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ArtModeOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ProfileImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/AutoSlideshowTimeoutPicker.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/Sections.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SettingsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SlideShowSettings.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/UserDefaults.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/shared/Badge.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AlbumListView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetThumbnailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExifInfoOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FoldersView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FullScreenImageView.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/InfoRow.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/LockScreenStyleOverlay.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesDetailView.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/PeopleGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SearchView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SharedGradientBackground.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SignInView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SimpleVideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SplashScreenView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/StatsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SwipeGestureView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TagsGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TechnicalInfoItem.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/UniversalErrorHandler.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/VideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/ContentView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich_GalleryApp.swift /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/GeneratedAssetSymbols.swift -supplementary-output-file-map /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/supplementaryOutputs-6 -emit-localized-strings -emit-localized-strings-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64 -target arm64-apple-tvos18-simulator -module-can-import-version DeveloperToolsSupport 23.0.4 23.0.4 -module-can-import-version SwiftUI 7.2.5 7.2.5 -module-can-import-version UIKit 9126.2.4.1 9126.2.4 -disable-cross-import-overlay-search -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libTipKitMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#TipKitMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -I /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/PackageFrameworks -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -profile-generate -profile-coverage-mapping -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/sander/dev/Immich-Gallery -enable-anonymous-context-mangled-names -file-compilation-dir /Users/sander/dev/Immich-Gallery -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-080c9acb371011151a58bc032572b023.sdkstatcache -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-generated-files.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-own-target-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery-114a120a1a190f53ea9cdc9ad471ff27-VFS-appletvsimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-project-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/include -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources-normal/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name Immich_Gallery -frontend-parseable-output -disable-clang-spi -target-sdk-version 26.2 -target-sdk-name appletvsimulator26.2 -clang-target arm64-apple-tvos26.2-simulator -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/InfoRow.o -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/LockScreenStyleOverlay.o -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesDetailView.o -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesSlideshowView.o -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/InfoRow.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/LockScreenStyleOverlay.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesDetailView.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesSlideshowView.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.o -index-store-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/InfoRow.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:253:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:253:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:254:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:254:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:255:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:255:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:256:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:256:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:257:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:257:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:258:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:258:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:259:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:259:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:260:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:260:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:261:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:261:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/LockScreenStyleOverlay.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesDetailView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/MemoriesSlideshowView.swift:281:46: error: cannot convert value of type 'URL' to expected argument type 'SlideContent'
+                            contentView(for: left)
+                                             ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/MemoriesSlideshowView.swift:328:38: error: cannot convert value of type 'URL' to expected argument type 'SlideContent'
+                    contentView(for: left)
+                                     ^
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Immich_Gallery (in target 'Immich Gallery' from project 'Immich Gallery')
+
+EmitSwiftModule normal arm64 (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:21:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:89:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:128:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:167:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:253:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:253:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:254:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:254:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:255:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:255:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:256:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:256:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:257:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:257:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:258:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:258:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:259:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:259:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:260:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:260:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:261:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:261:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/ExploreView.swift:796:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+
+SwiftCompile normal arm64 Compiling\ SwipeGestureView.swift,\ TagsGridView.swift,\ TechnicalInfoItem.swift,\ UniversalErrorHandler.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SwipeGestureView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TagsGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TechnicalInfoItem.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/UniversalErrorHandler.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SwipeGestureView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TagsGridView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TechnicalInfoItem.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/UniversalErrorHandler.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ PeopleGridView.swift,\ SearchView.swift,\ SharedGradientBackground.swift,\ SignInView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/PeopleGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SearchView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SharedGradientBackground.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SignInView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/PeopleGridView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SearchView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SharedGradientBackground.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SignInView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 Compiling\ VideoPlayerView.swift,\ ContentView.swift,\ Immich_GalleryApp.swift,\ GeneratedAssetSymbols.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/VideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/ContentView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich_GalleryApp.swift /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/VideoPlayerView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/ContentView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich_GalleryApp.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+LinkAssetCatalog /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Preview\ Content/Preview\ Assets.xcassets /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Assets.xcassets (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-linkAssetCatalog --thinned /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_output/thinned --thinned-dependencies /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_generated_info.plist_unthinned --output /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app --plist-output /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich Gallery.app/Assets.car (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Immich_Gallery (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftDriver\ Compilation\ Requirements Immich\ Gallery normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Immich_Gallery -Onone -enforce-exclusivity\=checked @/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -target arm64-apple-tvos18-simulator -g -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/PackageFrameworks -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -emit-localized-strings -emit-localized-strings-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-080c9acb371011151a58bc032572b023.sdkstatcache -output-file-map /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery_const_extract_protocols.json -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-generated-files.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-own-target-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery-114a120a1a190f53ea9cdc9ad471ff27-VFS-appletvsimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-project-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/include -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources-normal/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery-Swift.h -working-directory /Users/sander/dev/Immich-Gallery -experimental-emit-module-separately -disable-cmo
+
+ProcessInfoPlistFile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app/Info.plist /Users/sander/dev/Immich-Gallery/Immich-Gallery-Info.plist (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-infoPlistUtility /Users/sander/dev/Immich-Gallery/Immich-Gallery-Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app/PkgInfo -expandbuildsettings -format binary -platform appletvsimulator -additionalcontentfile /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/assetcatalog_generated_info.plist -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich\ Gallery.app/Info.plist
+
+Copy /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/arm64-apple-tvos-simulator.swiftmodule /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftmodule (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftmodule /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/arm64-apple-tvos-simulator.swiftmodule
+
+Copy /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/arm64-apple-tvos-simulator.abi.json /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.abi.json (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.abi.json /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/arm64-apple-tvos-simulator.abi.json
+
+Copy /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftsourceinfo (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery.swiftsourceinfo /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/Immich_Gallery.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo
+
+SwiftCompile normal arm64 Compiling\ SimpleVideoPlayerView.swift,\ SlideshowView.swift,\ SplashScreenView.swift,\ StatsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SimpleVideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SplashScreenView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/StatsView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SimpleVideoPlayerView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SlideshowView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SplashScreenView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/StatsView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImmichModels.swift, PeopleService.swift, SearchService.swift, SlideshowConfigService.swift, StorageMigration.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 Compiling\ AlbumService.swift,\ AssetProvider.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AlbumService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetProvider.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AlbumService.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetProvider.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+    cd /Users/sander/dev/Immich-Gallery
+    
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ InfoRow.swift,\ LockScreenStyleOverlay.swift,\ MemoriesDetailView.swift,\ MemoriesSlideshowView.swift,\ MemoriesView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/InfoRow.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/LockScreenStyleOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+	SwiftCompile normal arm64 /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift (in target 'Immich Gallery' from project 'Immich Gallery')
+	Building project Immich Gallery with scheme Immich Gallery and configuration Debug
+(3 failures)

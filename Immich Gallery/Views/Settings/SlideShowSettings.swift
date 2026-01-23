@@ -17,12 +17,27 @@ struct SlideshowSettings: View {
     @Binding var hideOverlay: Bool
     @Binding var enableReflections: Bool
     @Binding var enableKenBurns: Bool
+    @Binding var enableMemoriesSlideshow: Bool
     @Binding var enableShuffle: Bool
+    @Binding var slideshowTransition: String
     @Binding var autoSlideshowTimeout: Int
     @FocusState.Binding var isMinusFocused: Bool
     @FocusState.Binding var isPlusFocused: Bool
     @FocusState.Binding var focusedColor: String?
     @State private var showPerformanceAlert = false
+    
+    private let transitionOptions: [(label: String, value: String)] = [
+        ("Fade", "fade"),
+        ("Slide", "slide"),
+        ("Zoom", "zoom"),
+        ("Wipe", "wipe"),
+        ("Cube", "cube"),
+        ("Flip", "flip"),
+        ("Cover Flow", "coverFlow"),
+        ("Fade Through", "fadeThrough"),
+        ("Slide Left/Right", "slideLeftRight"),
+        ("Random", "random")
+    ]
     
     
     var body: some View {
@@ -167,6 +182,36 @@ struct SlideshowSettings: View {
                     .frame(width: 400, alignment: .trailing)
                 )
             )
+
+            SettingsRow(
+                icon: "rectangle.3.group",
+                title: "Slide Transition",
+                subtitle: "Choose the transition between slides",
+                content: AnyView(
+                    Picker("Slide Transition", selection: $slideshowTransition) {
+                        ForEach(transitionOptions, id: \.value) { option in
+                            Text(option.label).tag(option.value)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .frame(width: 300, alignment: .trailing)
+                )
+            )
+
+            SettingsRow(
+                icon: "sparkles",
+                title: "Memories Slideshow",
+                subtitle: "Enable the Memories slideshow viewer",
+                content: AnyView(
+                    Picker("Memories Slideshow", selection: $enableMemoriesSlideshow) {
+                        Text("Off").tag(false)
+                        Text("On").tag(true)
+                    }
+                    .pickerStyle(.menu)
+                    .frame(width: 300, alignment: .trailing)
+                ),
+                isOn: enableMemoriesSlideshow
+            )
             
             SettingsRow(
                 icon: "shuffle",
@@ -240,7 +285,9 @@ struct SlideshowSettings: View {
     @State var hideOverlay = true
     @State var enableReflections = true
     @State var enableKenBurns = false
+    @State var enableMemoriesSlideshow = false
     @State var enableShuffle = false
+    @State var slideshowTransition = "fade"
     @State var autoSlideshowTimeout = 5
     @FocusState var isMinusFocused: Bool
     @FocusState var isPlusFocused: Bool
@@ -253,7 +300,9 @@ struct SlideshowSettings: View {
         hideOverlay: $hideOverlay,
         enableReflections: $enableReflections,
         enableKenBurns: $enableKenBurns,
+        enableMemoriesSlideshow: $enableMemoriesSlideshow,
         enableShuffle: $enableShuffle,
+        slideshowTransition: $slideshowTransition,
         autoSlideshowTimeout: $autoSlideshowTimeout,
         isMinusFocused: $isMinusFocused,
         isPlusFocused: $isPlusFocused,

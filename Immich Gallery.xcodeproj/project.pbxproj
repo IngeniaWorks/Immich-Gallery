@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F2863002E4971C90032B966 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2862FF2E4971C90032B966 /* TVServices.framework */; };
 		2F2863072E4971C90032B966 /* TopShelfExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F2862FD2E4971C90032B966 /* TopShelfExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C566224F2F23C2D300219687 /* OmniSlideTV in Frameworks */ = {isa = PBXBuildFile; productRef = C566224E2F23C2D300219687 /* OmniSlideTV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F2863002E4971C90032B966 /* TVServices.framework in Frameworks */,
+				C566224F2F23C2D300219687 /* OmniSlideTV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +288,7 @@
 			);
 			name = TopShelfExtension;
 			packageProductDependencies = (
+				C566224E2F23C2D300219687 /* OmniSlideTV */,
 			);
 			productName = TopShelfExtension;
 			productReference = 2F2862FD2E4971C90032B966 /* TopShelfExtension.appex */;
@@ -326,6 +329,9 @@
 			);
 			mainGroup = 2F23BA642E1234C8005C563C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C566224D2F23C25400219687 /* XCLocalSwiftPackageReference "SlideShowViewer/OmniSlide-TV" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F23BA6E2E1234C8005C563C /* Products */;
 			projectDirPath = "";
@@ -673,17 +679,19 @@
 				CODE_SIGN_ENTITLEMENTS = TopShelfExtension/TopShelfExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopShelfExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TopShelfExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery.TopShelfExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery.TopShelfExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -698,17 +706,19 @@
 				CODE_SIGN_ENTITLEMENTS = TopShelfExtension/TopShelfExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopShelfExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TopShelfExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery.TopShelfExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery.TopShelfExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -766,6 +776,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C566224D2F23C25400219687 /* XCLocalSwiftPackageReference "SlideShowViewer/OmniSlide-TV" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "SlideShowViewer/OmniSlide-TV";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C566224E2F23C2D300219687 /* OmniSlideTV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C566224D2F23C25400219687 /* XCLocalSwiftPackageReference "SlideShowViewer/OmniSlide-TV" */;
+			productName = OmniSlideTV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F23BA652E1234C8005C563C /* Project object */;
 }

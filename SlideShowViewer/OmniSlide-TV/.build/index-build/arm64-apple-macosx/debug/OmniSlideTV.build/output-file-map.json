@@ -1,0 +1,89 @@
+{
+  "": {
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/master.swiftdeps"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/CoverFlowTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CoverFlowTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CoverFlowTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CoverFlowTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CoverFlowTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CoverFlowTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/CubeTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CubeTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CubeTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CubeTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CubeTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/CubeTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/FadeThroughTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeThroughTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeThroughTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeThroughTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeThroughTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeThroughTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/FadeTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FadeTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/FlipTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FlipTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FlipTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FlipTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FlipTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/FlipTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/SlideLeftRightTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideLeftRightTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideLeftRightTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideLeftRightTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideLeftRightTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideLeftRightTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/SlideTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/SlideTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/TransitionManager.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionManager.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionManager.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionManager.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionManager.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/TransitionType.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionType.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionType.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionType~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionType.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionType.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/WipeTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/WipeTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/WipeTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/WipeTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/WipeTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/WipeTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Transitions/ZoomTransition.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/ZoomTransition.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/ZoomTransition.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/ZoomTransition~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/ZoomTransition.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/ZoomTransition.dia"
+  },
+  "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/Views/TransitionView.swift": {
+    "dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionView.d",
+    "object": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionView.swift.o",
+    "swiftmodule": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionView~partial.swiftmodule",
+    "swift-dependencies": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionView.swiftdeps",
+    "diagnostics": "/Users/sander/dev/Immich-Gallery/SlideShowViewer/OmniSlide-TV/.build/index-build/arm64-apple-macosx/debug/OmniSlideTV.build/TransitionView.dia"
+  }
+}
