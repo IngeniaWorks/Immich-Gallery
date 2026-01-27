@@ -289,7 +289,10 @@ struct ExploreFirstRow: View {
     let exploreItems: [ExploreAsset]
     let assetService: AssetService
     @Binding var focusedItemID: String?
+    var isReturningFromSlideshow: Bool = false
+    var countdownTargetDate: Date? = nil
     let onItemSelected: (ExploreAsset) -> Void
+    var onTimerComplete: (() -> Void)? = nil
     
     @FocusState private var localFocusedItem: String?
     
@@ -301,7 +304,9 @@ struct ExploreFirstRow: View {
                     item: item,
                     assetService: assetService,
                     isCurrentlyFocused: localFocusedItem == item.id,
-                    onItemSelected: onItemSelected
+                    countdownTargetDate: focusedItemID == item.id ? countdownTargetDate : nil,
+                    onItemSelected: onItemSelected,
+                    onTimerComplete: onTimerComplete
                 )
                 .focused($localFocusedItem, equals: item.id)
             }
@@ -317,6 +322,12 @@ struct ExploreFirstRow: View {
                 }
             }
         }
+        .onChange(of: focusedItemID) { oldValue, newValue in
+            // Sync external focusedItemID changes to local FocusState
+            if newValue != localFocusedItem {
+                localFocusedItem = newValue
+            }
+        }
         .onAppear {
             print("🎯 ExploreFirstRow: onAppear - items count: \(exploreItems.count)")
             // Let user naturally focus on items instead of auto-focusing
@@ -329,7 +340,9 @@ struct FirstRowItem: View {
     let item: ExploreAsset
     let assetService: AssetService
     let isCurrentlyFocused: Bool
+    var countdownTargetDate: Date? = nil
     let onItemSelected: (ExploreAsset) -> Void
+    var onTimerComplete: (() -> Void)? = nil
     
     @State private var thumbnailImage: UIImage?
     
@@ -361,6 +374,20 @@ struct FirstRowItem: View {
                 )
                 .scaleEffect(isCurrentlyFocused ? 1.1 : 1.0)
                 .animation(.easeIn(duration: 0.5), value: isCurrentlyFocused)
+                .overlay(alignment: .topLeading) {
+                    if isCurrentlyFocused, let targetDate = countdownTargetDate {
+                         CircleCountdownView(
+                             totalTime: targetDate.timeIntervalSinceNow,
+                             onComplete: {
+                                 onTimerComplete?()
+                             },
+                             onCancel: {
+                                 // Optional: handle cancellation if focus lost, but view might just disappear
+                             }
+                         )
+                         .padding(8)
+                    }
+                }
             }
         }
         .padding(.top, 100)

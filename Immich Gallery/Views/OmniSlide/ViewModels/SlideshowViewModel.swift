@@ -19,6 +19,8 @@ final class SlideshowViewModel: ObservableObject {
     @Published var selectedTransition: TransitionType = .random
     @Published var autoplayInterval: TimeInterval = 5.0
     @Published private(set) var currentTransition: TransitionType = .fade
+    
+    var onSlideshowFinished: (() -> Void)?
     @Published private(set) var transitionForChange: TransitionType = .fade
     @Published var transitionOverride: TransitionType?
     @Published var animationDurationOverride: Double?
@@ -39,6 +41,7 @@ final class SlideshowViewModel: ObservableObject {
     private var pendingOverlaySplitIndex: Int?
     private var playbackReadyTimeoutTask: Task<Void, Never>?
     private var pendingPlaybackSlideID: UUID?
+    private var hasTriggeredFinish: Bool = false
     
     private let networkService: NetworkService
 
@@ -175,7 +178,30 @@ final class SlideshowViewModel: ObservableObject {
 
     private func advanceSlide(by offset: Int, trigger: SlideAdvanceTrigger) {
         guard !slides.isEmpty else { return }
-        let nextIndex = (currentSlideIndex + offset + slides.count) % slides.count
+        
+        // Calculate next index
+        let count = slides.count
+        let nextIndex = (currentSlideIndex + offset + count) % count
+        
+        // Check for loop completion (auto only)
+        if trigger == .auto && offset > 0 && nextIndex == 0 {
+            // We finished the loop
+            guard !hasTriggeredFinish else { return }
+            print("🎬 SlideshowViewModel: Slideshow finished loop")
+            
+            if let onSlideshowFinished = onSlideshowFinished {
+                 hasTriggeredFinish = true
+                 self.isPlaying = false // Stop immediately
+                 self.autoplayTask?.cancel()
+                 self.autoplayTask = nil
+                 
+                 Task { @MainActor in
+                     onSlideshowFinished()
+                 }
+                 return
+            }
+        }
+        
         transitionForChange = transitionForSlide(at: nextIndex)
         Task { @MainActor in
             await Task.yield()

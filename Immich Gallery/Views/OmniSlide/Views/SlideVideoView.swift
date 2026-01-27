@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SlideVideoView: View {
     let slide: SlideItem
+    let isActive: Bool
     let onPlaybackReady: ((UUID) -> Void)?
     private let networkService: NetworkService
 
@@ -10,8 +11,9 @@ struct SlideVideoView: View {
     @State private var computedOrientation: SlideItem.Orientation?
     @State private var playbackObserverTask: Task<Void, Never>?
 
-    init(slide: SlideItem, networkService: NetworkService, onPlaybackReady: ((UUID) -> Void)? = nil) {
+    init(slide: SlideItem, isActive: Bool, networkService: NetworkService, onPlaybackReady: ((UUID) -> Void)? = nil) {
         self.slide = slide
+        self.isActive = isActive
         self.networkService = networkService
         self.onPlaybackReady = onPlaybackReady
         
@@ -42,12 +44,34 @@ struct SlideVideoView: View {
             resolveOrientation()
         }
         .onAppear {
-            player?.play()
-            startPlaybackObserver()
+            player?.isMuted = !isActive
+            if isActive {
+                player?.play()
+                startPlaybackObserver()
+            }
         }
         .onDisappear {
             playbackObserverTask?.cancel()
             player?.pause()
+            player = nil // Final cleanup when view is truly gone
+        }
+        .onChange(of: isActive) { active in
+            if active {
+                if player == nil {
+                    let authHeaders = getAuthHeaders()
+                    let item = VideoPrefetcher.shared.playerItem(for: slide.mediaURL, headers: authHeaders)
+                    player = AVPlayer(playerItem: item)
+                    player?.automaticallyWaitsToMinimizeStalling = true
+                }
+                player?.isMuted = false
+                player?.play()
+                startPlaybackObserver()
+            } else {
+                player?.pause()
+                player?.isMuted = true
+                // Do NOT set player = nil here to preserve buffering
+                playbackObserverTask?.cancel()
+            }
         }
     }
 

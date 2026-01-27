@@ -4,7 +4,7 @@ final class VideoPrefetcher {
     static let shared = VideoPrefetcher()
     private var cachedAssets: [URL: AVURLAsset] = [:]
     private var cachedItems: [URL: AVPlayerItem] = [:]
-    private let defaultBufferDuration: TimeInterval = 3.0
+    private let defaultBufferDuration: TimeInterval = 5.0
 
     func prefetch(url: URL, headers: [String: String] = [:]) {
         let asset: AVURLAsset

@@ -1,16 +1,6 @@
 import Foundation
 import SwiftUI
 
-// MARK: - FilmBurn Seed & Configuration Stubs/Port
-enum FilmBurnSeedGenerator {
-    static func seed(from value: UInt64) -> SIMD2<Float> {
-        let mixed = (value ^ (value >> 33)) &* 0xff51afd7ed558ccd
-        let x = Double(mixed & 0xFFFF) / Double(0xFFFF)
-        let y = Double((mixed >> 16) & 0xFFFF) / Double(0xFFFF)
-        return SIMD2(Float(0.1 + 0.8 * x), Float(0.1 + 0.8 * y))
-    }
-}
-
 // MARK: - TransitionPairView
 struct TransitionPairView<Outgoing: View, Incoming: View>: View {
     let definition: TransitionManager.TransitionDefinition
@@ -48,31 +38,74 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
     }
 
     var body: some View {
-        ZStack {
-            transitioned(
-                outgoing(),
-                progress: outgoingProgress,
-                isOutgoing: true
-            )
-            .opacity(layerOpacity(progress: outgoingProgress, isOutgoing: true))
+        baseContent
+            .clipped()
+            .ignoresSafeArea()
+            .onAppear {
+                startAnimationSequence()
+            }
+            .onChange(of: trigger) { _ in
+                startAnimationSequence()
+            }
+            .onDisappear {
+                animationTask?.cancel()
+            }
+    }
 
-            transitioned(
-                incoming(),
-                progress: incomingProgress,
-                isOutgoing: false
-            )
-            .opacity(layerOpacity(progress: incomingProgress, isOutgoing: false))
-        }
-        .clipped()
-        .ignoresSafeArea()
-        .onAppear {
-            startAnimationSequence()
-        }
-        .onChange(of: trigger) { _ in
-            startAnimationSequence()
-        }
-        .onDisappear {
-            animationTask?.cancel()
+    private var baseContent: some View {
+        ZStack {
+            if definition.type == .filmBurn && outgoingProgress < 1.0 {
+                // Keep outgoing on top while it's burning
+                transitioned(
+                    incoming(),
+                    progress: incomingProgress,
+                    isOutgoing: false
+                )
+                .opacity(layerOpacity(progress: incomingProgress, isOutgoing: false))
+
+                transitioned(
+                    outgoing(),
+                    progress: outgoingProgress,
+                    isOutgoing: true
+                )
+                .opacity(layerOpacity(progress: outgoingProgress, isOutgoing: true))
+            } else {
+                // Standard layering (outgoing then incoming)
+                transitioned(
+                    outgoing(),
+                    progress: outgoingProgress,
+                    isOutgoing: true
+                )
+                .opacity(layerOpacity(progress: outgoingProgress, isOutgoing: true))
+
+                transitioned(
+                    incoming(),
+                    progress: incomingProgress,
+                    isOutgoing: false
+                )
+                .opacity(layerOpacity(progress: incomingProgress, isOutgoing: false))
+            }
+
+            if definition.type == .filmBurn {
+                // Add global flash/glow overlays
+                FilmBurnSwiftUIFallback(
+                    intensity: Float(outgoingProgress),
+                    phase: outgoingProgress,
+                    seed: outgoingFilmBurnSeed,
+                    direction: .consume
+                )
+                .blendMode(.plusLighter)
+                .allowsHitTesting(false)
+
+                FilmBurnSwiftUIFallback(
+                    intensity: Float(1.0 - incomingProgress),
+                    phase: incomingProgress,
+                    seed: incomingFilmBurnSeed,
+                    direction: .reveal
+                )
+                .blendMode(.plusLighter)
+                .allowsHitTesting(false)
+            }
         }
     }
 
@@ -81,6 +114,8 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
         if definition.type == .pushSlide {
             pushSlideDirection = PushSlideTransition.Direction.random()
         }
+        
+        // Ensure starting state
         outgoingProgress = 0
         incomingProgress = 0
 
@@ -88,8 +123,7 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
             let outgoingDuration = max(definition.outgoingDuration, 0.01)
             let incomingDuration = max(definition.incomingDuration, 0.01)
             
-            await Task.yield()
-
+            // Start outgoing animation (and overlapping incoming)
             withAnimation(.easeInOut(duration: outgoingDuration)) {
                 outgoingProgress = 1
                 if definition.mode == .overlap {
@@ -103,6 +137,14 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
                 withAnimation(.easeInOut(duration: incomingDuration)) {
                     incomingProgress = 1
                 }
+                // Force absolute completion after animation to avoid floating point residuals
+                try? await Task.sleep(nanoseconds: 50_000_000)
+                incomingProgress = 1.0
+            } else {
+                // For overlap, also force absolute completion
+                try? await Task.sleep(nanoseconds: UInt64(outgoingDuration * 1_000_000_000 + 50_000_000))
+                outgoingProgress = 1.0
+                incomingProgress = 1.0
             }
         }
     }
@@ -127,8 +169,11 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
         case .radialBlur:
             content.modifier(BlurTransitionModifier(progress: progress, isOutgoing: isOutgoing))
         case .filmBurn:
-            // Placeholder for FilmBurn until Metal/Complex SwiftUI is ported
-            content.modifier(FadePairModifier(progress: progress, isOutgoing: isOutgoing))
+            if isOutgoing {
+                content.modifier(FilmBurnPhaseModifier(phase: progress, seed: outgoingFilmBurnSeed))
+            } else {
+                content.modifier(FilmBurnRevealModifier(phase: progress, seed: incomingFilmBurnSeed))
+            }
         }
     }
 
@@ -136,6 +181,10 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
         switch definition.type {
         case .fade, .crossDissolve:
             return isOutgoing ? (1.0 - progress) : progress
+        case .filmBurn:
+            // Symmetrical burn: outgoing burns out (stays visible but fades slightly), 
+            // incoming reveals from burn (starts transparent then becomes opaque)
+            return isOutgoing ? max(0.4, 1.0 - progress * 0.6) : progress
         default:
             return 1.0
         }

@@ -8,6 +8,7 @@ struct MemoriesSlideshowView: View {
     let city: String?
     let startingIndex: Int
     let isFavorite: Bool
+    @Binding var onSlideshowFinish: Bool
     @Environment(\.dismiss) private var dismiss
 
     private let assetService: AssetService
@@ -24,13 +25,14 @@ struct MemoriesSlideshowView: View {
         case empty
     }
 
-    init(albumId: String? = nil, personId: String? = nil, tagId: String? = nil, city: String? = nil, startingIndex: Int = 0, isFavorite: Bool = false) {
+    init(albumId: String? = nil, personId: String? = nil, tagId: String? = nil, city: String? = nil, startingIndex: Int = 0, isFavorite: Bool = false, onSlideshowFinish: Binding<Bool> = .constant(false)) {
         self.albumId = albumId
         self.personId = personId
         self.tagId = tagId
         self.city = city
         self.startingIndex = startingIndex
         self.isFavorite = isFavorite
+        self._onSlideshowFinish = onSlideshowFinish
 
         let userManager = UserManager()
         let networkService = NetworkService(userManager: userManager)
@@ -48,14 +50,25 @@ struct MemoriesSlideshowView: View {
                 ProgressView("Loading Slideshow...")
                     .foregroundColor(.white)
             case .ready(let assets):
+                let viewModel = SlideshowViewModel(
+                    assets: assets,
+                    networkService: networkService,
+                    startingIndex: startingIndex
+                )
+                
                 OmniSlideshowView(
-                    viewModel: SlideshowViewModel(
-                        assets: assets,
-                        networkService: networkService,
-                        startingIndex: startingIndex
-                    ),
+                    viewModel: viewModel,
                     networkService: networkService
                 )
+                .onAppear {
+                    viewModel.onSlideshowFinished = {
+                        onSlideshowFinish = true
+                        dismiss()
+                    }
+                }
+                .task {
+                     // Wait slightly for VM to attach? Or do it in onAppear/setup
+                }
             case .error(let message):
                 VStack(spacing: 20) {
                     Image(systemName: "exclamationmark.triangle")

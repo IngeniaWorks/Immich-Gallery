@@ -1,0 +1,987 @@
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:21:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:89:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:128:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Components/ThumbnailProviders.swift:167:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/ExploreView.swift:817:35: warning: use of protocol 'GridDisplayable' as a type must be written 'any GridDisplayable'; this will be an error in a future Swift language mode
+    func loadThumbnails(for item: GridDisplayable) async -> [UIImage] {
+                                  ^~~~~~~~~~~~~~~
+                                  any GridDisplayable
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/MemoriesView.swift:69:25: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+    var body: some View {
+                        ^
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/SharedGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Components/ThumbnailProviders.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/DateFormatter+Extensions.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Extensions/GridDisplayableExtensions.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/ImmichModels.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/NavigationStyle.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Models/UserModels.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Protocols/UserStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AlbumService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetProvider.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AssetService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/AuthenticationService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ExploreService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/FolderService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ImageColorExtractor.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/MockImmichService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/NetworkService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/PeopleService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SearchService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/SlideshowConfigService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/StatsCache.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/StatsService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/TagService.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/ThumbnailCache.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Services/UserManager.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/HybridUserStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/KeychainTokenStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/StorageMigration.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Storage/UserDefaultsStorage.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/AdaptiveBackgroundView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ArtModeOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/CircleCountdownView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Components/ProfileImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Models/SlideItem.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Services/CacheManager.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Services/ImageCache.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Services/ImageLoader.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Services/VideoPrefetcher.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/FilmBurnTransition.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/OverlaySplitTransition.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/TransitionManager.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/TransitionModifiers.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/TransitionPairView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Transitions/TransitionType.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/ViewModels/SlideshowViewModel.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/AVPlayerLayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/OmniSlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/PauseShelfView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/SlideImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/SlideVideoView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/OmniSlide/Views/ViewHelpers.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/AutoSlideshowTimeoutPicker.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/Sections.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SettingsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/SlideShowSettings.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/Settings/UserDefaults.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/shared/Badge.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AlbumListView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/AssetThumbnailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExifInfoOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/ExploreView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FoldersView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/FullScreenImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/InfoRow.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/LockScreenStyleOverlay.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesDetailView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesPauseShelfView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideImageView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideItem.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowTransition.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesSlideshowView.swift -primary-file /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/MemoriesView+IdleTimer.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/PeopleGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SearchView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SharedGradientBackground.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SignInView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SimpleVideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SlideshowView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SplashScreenView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/StatsView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/SwipeGestureView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TagsGridView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/TechnicalInfoItem.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/UniversalErrorHandler.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Views/VideoPlayerView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/ContentView.swift /Users/sander/dev/Immich-Gallery/Immich\ Gallery/Immich_GalleryApp.swift /Users/sander/dev/Immich-Gallery/Shared/AppConstants.swift /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.d -emit-const-values-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.swiftconstvalues -emit-reference-dependencies-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.swiftdeps -serialize-diagnostics-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.dia -emit-localized-strings -emit-localized-strings-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64 -target arm64-apple-tvos26.0-simulator -module-can-import-version DeveloperToolsSupport 23.0.4 23.0.4 -module-can-import-version SwiftUI 7.2.5 7.2.5 -module-can-import-version UIKit 9126.2.4.1 9126.2.4 -disable-cross-import-overlay-search -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/lib/swift/host/plugins/libTipKitMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/usr/bin/swift-plugin-server\#TipKitMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich_Gallery-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator26.2.sdk -I /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -F /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -profile-generate -profile-coverage-mapping -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/Immich\ Gallery_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/sander/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/sander/dev/Immich-Gallery -enable-anonymous-context-mangled-names -file-compilation-dir /Users/sander/dev/Immich-Gallery -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator26.2-23K50-3885c01c3e6b6a337905948deab2002e080c9acb371011151a58bc032572b023.sdkstatcache -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-generated-files.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-own-target-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-all-target-headers.hmap -Xcc -iquote -Xcc /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Immich\ Gallery-project-headers.hmap -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Products/Debug-appletvsimulator/include -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources-normal/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources/arm64 -Xcc -I/Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name Immich_Gallery -frontend-parseable-output -disable-clang-spi -target-sdk-version 26.2 -target-sdk-name appletvsimulator26.2 -clang-target arm64-apple-tvos26.2-simulator -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Build/Intermediates.noindex/Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.o -index-unit-output-path /Immich\ Gallery.build/Debug-appletvsimulator/Immich\ Gallery.build/Objects-normal/arm64/MemoriesView.o -index-store-path /Users/sander/Library/Developer/Xcode/DerivedData/Immich_Gallery-eittrmpavvicbzfinpapxnnmzxht/Index.noindex/DataStore -index-system-modules
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+@__swiftmacro_14Immich_Gallery0024AlbumListViewswift_ynAHffMX235_0_33_8E4C8C3C900D7E754AFE1CDF382D01DBLl7PreviewfMf_.swift:19:79: warning: immutable value 'peopleService' was never used; consider replacing with '_' or removing it
+                let (_, userManager, authService, assetService, albumService, peopleService, _, _) =
+                                                                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0024AlbumListViewswift_ynAHffMX235_0_33_8E4C8C3C900D7E754AFE1CDF382D01DBLl7PreviewfMf_.swift:19:79: warning: immutable value 'peopleService' was never used; consider replacing with '_' or removing it
+                let (_, userManager, authService, assetService, albumService, peopleService, _, _) =
+                                                                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0024AlbumListViewswift_ynAHffMX235_0_33_8E4C8C3C900D7E754AFE1CDF382D01DBLl7PreviewfMf_.swift:19:79: warning: immutable value 'peopleService' was never used; consider replacing with '_' or removing it
+                let (_, userManager, authService, assetService, albumService, peopleService, _, _) =
+                                                                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/AlbumListView.swift:236:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:19:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0033LockScreenStyleOverlayswift_DbGHjfMX189_0_33_55F5540CBE00C8AD946C0B24DDA7D854Ll7PreviewfMf_.swift:22:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/LockScreenStyleOverlay.swift:190:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SignInView.swift:199:25: warning: immutable value 'token' was never used; consider removing it
+                    let token: String
+                        ^
+@__swiftmacro_14Immich_Gallery0024SlideshowViewswift_ynAHffMX762_0_33_2C1E79635FFF774D24F079C96DAB34A1Ll7PreviewfMf_.swift:25:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0024SlideshowViewswift_ynAHffMX762_0_33_2C1E79635FFF774D24F079C96DAB34A1Ll7PreviewfMf_.swift:28:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0024SlideshowViewswift_ynAHffMX762_0_33_2C1E79635FFF774D24F079C96DAB34A1Ll7PreviewfMf_.swift:25:31: warning: immutable value 'assetService' was never used; consider replacing with '_' or removing it
+                let (_, _, _, assetService, _, _, _, _) = MockServiceFactory.createMockServices()
+                              ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+@__swiftmacro_14Immich_Gallery0024SlideshowViewswift_ynAHffMX762_0_33_2C1E79635FFF774D24F079C96DAB34A1Ll7PreviewfMf_.swift:28:21: warning: initialization of immutable value 'mockAssets' was never used; consider replacing with assignment to '_' or removing it
+                let mockAssets = [
+                    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/SlideshowView.swift:763:1: note: in expansion of macro 'Preview' here
+#Preview {
+^~~~~~~~~~
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowInterval: Double = 8.0
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:282:5: note: Add '@Previewable'
+    @State var slideshowInterval: Double = 8.0
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowBackgroundColor = "white"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:283:5: note: Add '@Previewable'
+    @State var slideshowBackgroundColor = "white"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var use24HourClock = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:284:5: note: Add '@Previewable'
+    @State var use24HourClock = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var hideOverlay = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:285:5: note: Add '@Previewable'
+    @State var hideOverlay = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableReflections = true
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:286:5: note: Add '@Previewable'
+    @State var enableReflections = true
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableKenBurns = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:287:5: note: Add '@Previewable'
+    @State var enableKenBurns = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableMemoriesSlideshow = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:288:5: note: Add '@Previewable'
+    @State var enableMemoriesSlideshow = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var enableShuffle = false
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:289:5: note: Add '@Previewable'
+    @State var enableShuffle = false
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var slideshowTransition = "fade"
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:290:5: note: Add '@Previewable'
+    @State var slideshowTransition = "fade"
+    ^~~~~~
+    @Previewable @State
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: warning: '@State' used inline will not work unless tagged with '@Previewable' (from macro 'Preview')
+    @State var autoSlideshowTimeout = 5
+    ^
+/Users/sander/dev/Immich-Gallery/Immich Gallery/Views/Settings/SlideShowSettings.swift:291:5: note: Add '@Previewable'
+    @State var autoSlideshowTimeout = 5
+    ^~~~~~
+    @Previewable @State
+** BUILD FAILED **
+

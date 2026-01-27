@@ -18,14 +18,9 @@ struct OmniSlideshowView: View {
                 // This forces SwiftUI to start the lifecycle (loading images/videos) for the next/previous slides
                 Group {
                     if let next = viewModel.slide(atOffset: 1) {
-                        slideView(for: next)
+                        slideView(for: next, isActive: false)
                             .frame(width: 1, height: 1) // Tiny frame
                             .opacity(0.01) // Nearly invisible
-                    }
-                    if let prev = viewModel.slide(atOffset: -1) {
-                        slideView(for: prev)
-                            .frame(width: 1, height: 1)
-                            .opacity(0.01)
                     }
                 }
                 .allowsHitTesting(false)
@@ -52,14 +47,15 @@ struct OmniSlideshowView: View {
                                 viewModel.completeOverlaySplit(from: viewModel.transitionCounter)
                             }
                         ) {
-                            SlideImageView(slide: slide, networkService: networkService)
+                            slideView(for: slide, isActive: true)
                         } rightContent: {
-                            SlideImageView(slide: rightSlide, networkService: networkService)
+                            slideView(for: rightSlide, isActive: false)
                         } backgroundContent: {
-                            SlideImageView(slide: previousSlide, networkService: networkService)
+                            slideView(for: previousSlide, isActive: false)
                         } revealContent: {
-                            SlideImageView(slide: revealSlide, networkService: networkService)
+                            slideView(for: revealSlide, isActive: false)
                         }
+                        .id(viewModel.transitionCounter)
                     } else {
                         // Standard Transitions
                         if let previousSlide = viewModel.previousSlideItem {
@@ -67,16 +63,19 @@ struct OmniSlideshowView: View {
                                 definition: definition,
                                 trigger: viewModel.transitionCounter,
                                 isOutgoingVideo: previousSlide.mediaType == .video,
-                                isIncomingVideo: slide.mediaType == .video
+                                isIncomingVideo: slide.mediaType == .video,
+                                outgoingFilmBurnSeed: filmBurnSeed(for: previousSlide),
+                                incomingFilmBurnSeed: filmBurnSeed(for: slide)
                             ) {
-                                slideView(for: previousSlide)
+                                slideView(for: previousSlide, isActive: false)
                                     .frame(width: proxy.size.width, height: proxy.size.height)
                             } incoming: {
-                                slideView(for: slide)
+                                slideView(for: slide, isActive: true)
                                     .frame(width: proxy.size.width, height: proxy.size.height)
                             }
+                            .id(viewModel.transitionCounter)
                         } else {
-                            slideView(for: slide)
+                            slideView(for: slide, isActive: true)
                                 .frame(width: proxy.size.width, height: proxy.size.height)
                         }
                     }
@@ -116,13 +115,20 @@ struct OmniSlideshowView: View {
         }
     }
 
+    private func filmBurnSeed(for slide: SlideItem) -> SIMD2<Float> {
+        let counter = UInt64(viewModel.transitionCounter)
+        let slideHash = slide.id.uuidString.hashValue
+        let transitionHash = UInt64(bitPattern: Int64(slideHash)) ^ (counter &* 0x9E3779B97F4A7C15)
+        return FilmBurnSeedGenerator.seed(from: transitionHash)
+    }
+
     @ViewBuilder
-    private func slideView(for slide: SlideItem) -> some View {
+    private func slideView(for slide: SlideItem, isActive: Bool) -> some View {
         switch slide.mediaType {
         case .image:
             SlideImageView(slide: slide, networkService: networkService)
         case .video:
-            SlideVideoView(slide: slide, networkService: networkService) { slideID in
+            SlideVideoView(slide: slide, isActive: isActive, networkService: networkService) { slideID in
                 viewModel.markPlaybackReady(for: slideID)
             }
         }

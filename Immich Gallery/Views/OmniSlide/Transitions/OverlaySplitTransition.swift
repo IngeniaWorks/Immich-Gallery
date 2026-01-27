@@ -83,10 +83,12 @@ struct OverlaySplitTransitionView<LeftContent: View, RightContent: View, Backgro
             }
         }
         .onAppear {
+            debug("🐢 [OVERLAY] onAppear")
             startAnimationSequence()
             startKenBurns()
         }
         .onChange(of: trigger) { _ in
+            debug("🐢 [OVERLAY] onChange(trigger) - trigger: \(trigger)")
             animationTask?.cancel()
             currentPhase = .entering
             leftMovesFromTop = Bool.random()
@@ -132,6 +134,10 @@ struct OverlaySplitTransitionView<LeftContent: View, RightContent: View, Backgro
     }
 
     private func startAnimationSequence() {
+        debug("🐢 [OVERLAY] startAnimationSequence() called")
+        debug("🐢 [OVERLAY]   idle duration: \(idleDuration)s")
+        debug("🐢 [OVERLAY]   enter/exit duration: \(enterExitDuration)s")
+
         animationTask?.cancel()
         animationTask = Task { @MainActor in
             currentPhase = .entering
@@ -145,20 +151,11 @@ struct OverlaySplitTransitionView<LeftContent: View, RightContent: View, Backgro
                 idleOffsetBottom = borderHeight
             }
 
-            do {
-                try await Task.sleep(nanoseconds: UInt64(enterExitDuration * 1_000_000_000))
-            } catch {
-                return
-            }
-
+            try? await Task.sleep(nanoseconds: UInt64(enterExitDuration * 1_000_000_000))
             guard !Task.isCancelled else { return }
 
             if idleDuration > 0 {
-                do {
-                    try await Task.sleep(nanoseconds: UInt64(idleDuration * 1_000_000_000))
-                } catch {
-                    return
-                }
+                try? await Task.sleep(nanoseconds: UInt64(idleDuration * 1_000_000_000))
             }
 
             guard !Task.isCancelled else { return }
@@ -170,12 +167,7 @@ struct OverlaySplitTransitionView<LeftContent: View, RightContent: View, Backgro
                 revealOpacity = 1
             }
 
-            do {
-                try await Task.sleep(nanoseconds: UInt64(enterExitDuration * 1_000_000_000))
-            } catch {
-                return
-            }
-
+            try? await Task.sleep(nanoseconds: UInt64(enterExitDuration * 1_000_000_000))
             guard !Task.isCancelled else { return }
             onReveal?()
         }
@@ -210,5 +202,10 @@ struct OverlaySplitTransitionView<LeftContent: View, RightContent: View, Backgro
         case .exiting:
             return height * direction * sideMultiplier * 1.0
         }
+    }
+
+    private func debug(_ message: String) {
+        guard debugEnabled else { return }
+        print(message)
     }
 }

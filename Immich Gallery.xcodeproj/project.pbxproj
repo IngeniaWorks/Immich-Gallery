@@ -780,8 +780,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-
 	};
 	rootObject = 2F23BA652E1234C8005C563C /* Project object */;
 }

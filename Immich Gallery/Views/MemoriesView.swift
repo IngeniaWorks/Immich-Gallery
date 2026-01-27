@@ -18,10 +18,10 @@ struct MemoriesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var selectedAsset: ImmichAsset?
-    @State private var showingFullScreen = true
+    @State var showingFullScreen = true
     @State private var currentAssetIndex: Int = 0
     @State private var showingStats = false
-    @State private var selectedExploreItem: ExploreAsset?
+    @State var selectedExploreItem: ExploreAsset?
     @State private var belowFold = false
     @State private var showcaseHeight: CGFloat = 0
     @State private var showcaseHighlightedItem: ExploreAsset?
@@ -29,6 +29,11 @@ struct MemoriesView: View {
     @State private var navigationDirection: BackgroundImageView.NavigationDirection = .none
     @State private var previousFocusedItemID: String?
     @State private var randomizedFirstRowItems: [ExploreAsset] = []
+    @State var isReturningFromSlideshow = false
+    @State var idleTimerTick = 0
+    @State var idleTimer: Timer?
+    @State var countdownTargetDate: Date?
+    @State var lastPlayedItemID: String?
     @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = true
     
     // Computed property to get the focused explore item
@@ -64,160 +69,16 @@ struct MemoriesView: View {
     
     var body: some View {
         ZStack {
-            // Background with gradient mask
-            BackgroundImageView(
-                selectedItem: focusedExploreItem ?? exploreItems.first,
-                assetService: assetService,
-                belowFold: belowFold,
-                exploreItems: exploreItems,
-                navigationDirection: navigationDirection
-            )
-            .onAppear {
-                print("🎯 BackgroundImageView: Initial item - \((focusedExploreItem ?? exploreItems.first)?.primaryTitle ?? "nil")")
-            }
+            backgroundView
             
             if isLoading {
-                ProgressView("Loading explore data...")
-                    .foregroundColor(.white)
-                    .scaleEffect(1.5)
+                loadingOverlay
             } else if let errorMessage = errorMessage {
-                VStack {
-                    Image(systemName: "exclamationmark.triangle")
-                        .font(.system(size: 60))
-                        .foregroundColor(.orange)
-                    Text("Error")
-                        .font(.title)
-                        .foregroundColor(.white)
-                    Text(errorMessage)
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Button("Retry") {
-                        loadExploreData()
-                    }
-                    .buttonStyle(.borderedProminent)
-                }
+                errorOverlay(message: errorMessage)
             } else if exploreItems.isEmpty {
-                VStack {
-                    Image(systemName: "photo")
-                        .font(.system(size: 60))
-                        .foregroundColor(.gray)
-                    Text("No Places Found")
-                        .font(.title)
-                        .foregroundColor(.white)
-                    Text("Photos with location data will appear here")
-                        .foregroundColor(.gray)
-                }
+                emptyStateView
             } else {
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        LazyVStack(spacing: 0) {
-                            Color.clear
-                                .frame(height: 0)
-                                .id("showcaseTop")
-                            // Above-the-fold showcase section
-                            VStack(alignment: .leading) {
-                                if let displayItem = focusedExploreItem ?? exploreItems.first {
-                                    HStack(alignment: .center, spacing: 40) {
-                                        VStack(alignment: .leading, spacing: 20) {
-                                            Spacer(minLength: 40)
-                                            
-                                            Text(displayItem.primaryTitle.isEmpty == true ? "Unknown City" : displayItem.primaryTitle )
-                                                .font(.largeTitle)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white)
-                                                .animation(.easeInOut(duration: 0.3), value: displayItem.id)
-                                            
-                                            Text("\(displayItem.secondaryTitle ?? "")")
-                                                .font(.title2)
-                                                .foregroundColor(.white.opacity(0.8))
-                                            
-                                            //Spacer(minLength: 20)
-                                        }
-                                        
-                                        //Spacer()
-                                    }
-                                    .padding(.horizontal, 60)
-                                }
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .focusSection()
-                            .containerRelativeFrame(.vertical, alignment: .topLeading) {
-                                length, _ in length * 0.70
-                            }
-                            
-                            //.frame(height: calculateShowcaseHeight())
-                            .onScrollVisibilityChange { visible in
-                                withAnimation {
-                                    belowFold = !visible
-                                }
-                            }
-                            
-                            // First Row (Above the fold)
-                            Text("Watch now")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .padding(.horizontal)
-                                .padding(.top, 12)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            ExploreFirstRow(
-                                exploreItems: randomizedFirstRowItems,
-                                assetService: assetService,
-                                focusedItemID: $focusedItemID,
-                                onItemSelected: { item in
-                                    NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
-                                    selectedExploreItem = item
-                                    
-                                }
-                            )
-                            .padding(.horizontal)
-                            
-                            // Remaining Grid Items (Below the fold)
-                            if exploreItems.count > GridConfig.peopleStyle.columns.count {
-                                Text("Random Location Albums")
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal)
-                                    .padding(.top, 12)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .opacity(belowFold ? 1 : 0)
-                                    .animation(.easeInOut(duration: 0.5), value: belowFold)
-                                ExploreRemainingGrid(
-                                    exploreItems: remainingGridItems,
-                                    assetService: assetService,
-                                    focusedItemID: $focusedItemID,
-                                    onItemSelected: { item in
-                                        NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
-                                        selectedExploreItem = item
-                                    }
-                                )
-                                .padding(.vertical)
-                            }
-                        }
-                    }
-                    .onChange(of: focusedItemID) { _, newValue in
-                        guard newValue != nil else {
-                            print("🎯 MemoriesView: Focus cleared, skipping scroll")
-                            return
-                        }
-                        guard isFirstRowFocused else {
-                            print("🎯 MemoriesView: Focus moved outside first row, no scroll")
-                            return
-                        }
-                        print("🎯 MemoriesView: First row focused, scrolling to showcase")
-                        withAnimation(.easeInOut) {
-                            proxy.scrollTo("showcaseTop", anchor: .top)
-                        }
-                    }
-                }
-                //                .scrollTargetBehavior(
-                //                    FoldSnappingScrollTargetBehavior(
-                //                        aboveFold: !belowFold,
-                //                        showcaseHeight: showcaseHeight
-                //                    )
-                //                )
+                mainGridContent
             }
         }
         .fullScreenCover(isPresented: $showingStats) {
@@ -231,7 +92,8 @@ struct MemoriesView: View {
                     tagId: nil,
                     city: exploreItem.primaryTitle,
                     startingIndex: 0,
-                    isFavorite: false
+                    isFavorite: false,
+                    onSlideshowFinish: $isReturningFromSlideshow
                 )
                 .ignoresSafeArea()
             } else {
@@ -252,6 +114,10 @@ struct MemoriesView: View {
                 // If data is already loaded but first row items aren't randomized yet
                 randomizeFirstRowItems()
             }
+            startIdleTimer()
+        }
+        .onDisappear {
+            stopIdleTimer()
         }
         .onChange(of: focusedItemID) { oldValue, newValue in
             print("🎯 MemoriesView: focusedItemID changed from \(oldValue ?? "nil") to \(newValue ?? "nil")")
@@ -278,10 +144,241 @@ struct MemoriesView: View {
             }
             
             previousFocusedItemID = oldValue
+            if !isReturningFromSlideshow {
+                resetIdleTimer()
+            } else {
+                // If focus changed while returning, it's either our auto-focus (keep it)
+                // or a manual interrupt (cancel return state).
+                if newValue != randomizedFirstRowItems.first?.id {
+                    isReturningFromSlideshow = false
+                    resetIdleTimer()
+                } else {
+                    idleTimerTick = 0 // Just reset ticks
+                }
+            }
+        }
+        .onChange(of: isReturningFromSlideshow) { oldValue, newValue in
+            if newValue {
+                // Rotate items so the one that just played is replaced
+                rotateShowcase(playedID: lastPlayedItemID)
+                
+                // Set countdown FIRST so it's ready when focus hits
+                countdownTargetDate = Date().addingTimeInterval(5)
+                
+                // Return focus to the NEW first item
+                if let firstItemID = randomizedFirstRowItems.first?.id {
+                    focusedItemID = firstItemID
+                }
+            } else {
+                countdownTargetDate = nil
+            }
+        }
+        .onChange(of: idleTimerTick) { oldValue, newValue in
+            if newValue == 20 {
+                countdownTargetDate = Date().addingTimeInterval(10)
+            }
         }
         .onChange(of: isRemainingGridFocused) { _, newValue in
             print("🎯 MemoriesView: Remaining grid focus state = \(newValue)")
         }
+    }
+    
+    @ViewBuilder
+    private var backgroundView: some View {
+        BackgroundImageView(
+            selectedItem: focusedExploreItem ?? exploreItems.first,
+            assetService: assetService,
+            belowFold: belowFold,
+            exploreItems: exploreItems,
+            navigationDirection: navigationDirection
+        )
+        .onAppear {
+            let title = (focusedExploreItem ?? exploreItems.first)?.primaryTitle ?? "nil"
+            print("🎯 BackgroundImageView: Initial item - \(title)")
+        }
+        .onScrollVisibilityChange { visible in
+            withAnimation {
+                belowFold = !visible
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var loadingOverlay: some View {
+        ProgressView("Loading explore data...")
+            .foregroundColor(.white)
+            .scaleEffect(1.5)
+    }
+    
+    @ViewBuilder
+    private func errorOverlay(message: String) -> some View {
+        VStack {
+            Image(systemName: "exclamationmark.triangle")
+                .font(.system(size: 60))
+                .foregroundColor(.orange)
+            Text("Error")
+                .font(.title)
+                .foregroundColor(.white)
+            Text(message)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding()
+            Button("Retry") {
+                loadExploreData()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+    }
+    
+    @ViewBuilder
+    private var emptyStateView: some View {
+        VStack {
+            Image(systemName: "photo")
+                .font(.system(size: 60))
+                .foregroundColor(.gray)
+            Text("No Places Found")
+                .font(.title)
+                .foregroundColor(.white)
+            Text("Photos with location data will appear here")
+                .foregroundColor(.gray)
+        }
+    }
+    
+    @ViewBuilder
+    private var mainGridContent: some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    Color.clear
+                        .frame(height: 1) // 1px for more stability than 0
+                        .id("showcaseTop")
+                    
+                    showcaseSection
+                    
+                    watchNowSection
+                    
+                    remainingGridSection
+                }
+            }
+            .onChange(of: focusedItemID) { oldValue, newValue in
+                handleFocusScroll(proxy: proxy, oldValue: oldValue, newValue: newValue)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var showcaseSection: some View {
+        // Above-the-fold showcase section
+        VStack(alignment: .leading) {
+            if let displayItem = focusedExploreItem ?? exploreItems.first {
+                HStack(alignment: .center, spacing: 40) {
+                    VStack(alignment: .leading, spacing: 20) {
+                        Spacer(minLength: 40)
+                        
+                        Text(displayItem.primaryTitle.isEmpty == true ? "Unknown City" : displayItem.primaryTitle )
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .animation(.easeInOut(duration: 0.3), value: displayItem.id)
+                        
+                        Text("\(displayItem.secondaryTitle ?? "")")
+                            .font(.title2)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+                .padding(.horizontal, 60)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .focusSection()
+        .containerRelativeFrame(.vertical, alignment: .topLeading) {
+            length, _ in length * 0.50
+        }
+    }
+    
+    @ViewBuilder
+    private var watchNowSection: some View {
+        // First Row (Above the fold)
+        Text("Watch now")
+            .font(.title2)
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .padding(.horizontal)
+            .padding(.top, 12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        
+        ExploreFirstRow(
+            exploreItems: randomizedFirstRowItems,
+            assetService: assetService,
+            focusedItemID: $focusedItemID,
+            isReturningFromSlideshow: isReturningFromSlideshow,
+            countdownTargetDate: countdownTargetDate,
+            onItemSelected: { item in
+                NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
+                lastPlayedItemID = item.id
+                selectedExploreItem = item
+                isReturningFromSlideshow = false
+                resetIdleTimer()
+            },
+            onTimerComplete: {
+                handleTimerComplete()
+            }
+        )
+        .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    private var remainingGridSection: some View {
+        // Remaining Grid Items (Below the fold)
+        if exploreItems.count > GridConfig.peopleStyle.columns.count {
+            Text("Random Location Albums")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .padding(.horizontal)
+                .padding(.top, 12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .opacity(belowFold ? 1 : 0)
+                .animation(.easeInOut(duration: 0.5), value: belowFold)
+            ExploreRemainingGrid(
+                exploreItems: remainingGridItems,
+                assetService: assetService,
+                focusedItemID: $focusedItemID,
+                onItemSelected: { item in
+                    NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
+                    selectedExploreItem = item
+                }
+            )
+            .padding(.vertical)
+        }
+    }
+    
+    private func handleFocusScroll(proxy: ScrollViewProxy, oldValue: String?, newValue: String?) {
+        guard let newValue = newValue else {
+            print("🎯 MemoriesView: Focus cleared, skipping scroll")
+            return
+        }
+        
+        let isNowInFirstRow = randomizedFirstRowItems.contains { $0.id == newValue }
+        
+        // If we are in the first row, we ALWAYS want to be at the top.
+        // During fast scrolling, the system might try to pull the view up/down.
+        // We re-affirm the top position on every focus change in the row.
+        if isNowInFirstRow {
+            print("🎯 MemoriesView: Focus in first row (\(newValue)), ensuring top alignment")
+            // Use no animation or very short animation for fast scroll stability
+            proxy.scrollTo("showcaseTop", anchor: .top)
+        }
+    }
+    
+    private func handleTimerComplete() {
+        if let firstItem = randomizedFirstRowItems.first, isReturningFromSlideshow {
+            selectedExploreItem = firstItem
+        } else if let focusedItemID = focusedItemID, let item = exploreItems.first(where: { $0.id == focusedItemID }) {
+            selectedExploreItem = item
+        }
+        isReturningFromSlideshow = false
+        resetIdleTimer()
     }
     
     private func loadExploreData() {
@@ -328,6 +425,38 @@ struct MemoriesView: View {
     //            return height
     //        }
     //    }
+    
+    private func rotateShowcase(playedID: String? = nil) {
+        guard !randomizedFirstRowItems.isEmpty else { return }
+        
+        // 1. Identify which item to remove
+        // Use provided ID, or default to the first one (most common for auto-slideshow)
+        let idToRemove = playedID ?? randomizedFirstRowItems.first?.id
+        
+        // 2. Remove that specific item if found
+        var finishedItem: ExploreAsset?
+        if let index = randomizedFirstRowItems.firstIndex(where: { $0.id == idToRemove }) {
+            finishedItem = randomizedFirstRowItems.remove(at: index)
+        } else {
+            // Fallback to first if not found (shouldn't happen)
+            finishedItem = randomizedFirstRowItems.removeFirst()
+        }
+        
+        // 3. Identify items not in the current showcase
+        let currentIDs = Set(randomizedFirstRowItems.map { $0.id })
+        let availablePool = exploreItems.filter { !currentIDs.contains($0.id) }
+        
+        // 4. Add a new item
+        if let newItem = availablePool.randomElement() {
+            // Add a fresh item from the library
+            randomizedFirstRowItems.append(newItem)
+            print("🎯 MemoriesView: Showcase updated with fresh item: \(newItem.primaryTitle)")
+        } else if let finishedItem = finishedItem {
+            // If no fresh items, just loop back the finished item to maintain size
+            randomizedFirstRowItems.append(finishedItem)
+            print("🎯 MemoriesView: Showcase rotated (no fresh items available)")
+        }
+    }
     
     private func randomizeFirstRowItems() {
         let columnsCount = GridConfig.peopleStyle.columns.count

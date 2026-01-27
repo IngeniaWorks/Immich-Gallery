@@ -52,7 +52,7 @@ struct TransitionManager {
         case .fade:
             return TransitionDefinition(type: type, outgoingDuration: 0.6, incomingDuration: 0.6, mode: .sequential)
         case .filmBurn:
-            return TransitionDefinition(type: type, outgoingDuration: 0.5, incomingDuration: 1, mode: .sequential)
+            return TransitionDefinition(type: type, outgoingDuration: 0.4, incomingDuration: 0.8, mode: .sequential)
         case .wipe:
             return TransitionDefinition(type: type, outgoingDuration: 0.5, incomingDuration: 0.5, mode: .sequential)
         case .pushSlide:
