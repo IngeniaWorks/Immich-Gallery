@@ -18,7 +18,7 @@ struct MemoriesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var selectedAsset: ImmichAsset?
-    @State private var showingFullScreen = false
+    @State private var showingFullScreen = true
     @State private var currentAssetIndex: Int = 0
     @State private var showingStats = false
     @State private var selectedExploreItem: ExploreAsset?
@@ -29,7 +29,7 @@ struct MemoriesView: View {
     @State private var navigationDirection: BackgroundImageView.NavigationDirection = .none
     @State private var previousFocusedItemID: String?
     @State private var randomizedFirstRowItems: [ExploreAsset] = []
-    @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = false
+    @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = true
     
     // Computed property to get the focused explore item
     private var focusedExploreItem: ExploreAsset? {
@@ -233,6 +233,7 @@ struct MemoriesView: View {
                     startingIndex: 0,
                     isFavorite: false
                 )
+                .ignoresSafeArea()
             } else {
                 SlideshowView(
                     albumId: nil,

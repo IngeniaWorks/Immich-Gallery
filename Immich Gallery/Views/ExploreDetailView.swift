@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreDetailView: View {
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     let city: String
     @ObservedObject var assetService: AssetService
     @ObservedObject var authService: AuthenticationService
@@ -56,14 +57,25 @@ struct ExploreDetailView: View {
             }
         }
         .fullScreenCover(isPresented: $slideshowTrigger) {
-            SlideshowView(
-                albumId: nil,
-                personId: nil, 
-                tagId: nil,
-                city: city,
-                startingIndex: 0,
-                isFavorite: false
-            )
+            if enableMemoriesSlideshow {
+                MemoriesSlideshowView(
+                    albumId: nil,
+                    personId: nil,
+                    tagId: nil,
+                    city: city,
+                    startingIndex: 0,
+                    isFavorite: false
+                )
+            } else {
+                SlideshowView(
+                    albumId: nil,
+                    personId: nil,
+                    tagId: nil,
+                    city: city,
+                    startingIndex: 0,
+                    isFavorite: false
+                )
+            }
         }
         .onAppear(){
             print("Explore detail view for city: \(city)")

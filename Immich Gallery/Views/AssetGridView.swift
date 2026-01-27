@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AssetGridView: View {
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     @ObservedObject var assetService: AssetService
     @ObservedObject var authService: AuthenticationService
     @ObservedObject private var thumbnailCache = ThumbnailCache.shared
@@ -211,7 +212,11 @@ struct AssetGridView: View {
                 // Find the index of the current asset in the filtered image assets
                 let startingIndex = currentAssetIndex < assets.count ? 
                     (imageAssets.firstIndex(of: assets[currentAssetIndex]) ?? 0) : 0
-                SlideshowView(albumId: albumId, personId: personId, tagId: tagId, city: city, startingIndex: startingIndex, isFavorite: isFavorite)
+                if enableMemoriesSlideshow {
+                    MemoriesSlideshowView(albumId: albumId, personId: personId, tagId: tagId, city: city, startingIndex: startingIndex, isFavorite: isFavorite)
+                } else {
+                    SlideshowView(albumId: albumId, personId: personId, tagId: tagId, city: city, startingIndex: startingIndex, isFavorite: isFavorite)
+                }
             }
         }
         .onPlayPauseCommand(perform: {
@@ -424,4 +429,3 @@ struct AssetGridView: View {
         }
     }
 }
-

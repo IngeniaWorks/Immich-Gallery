@@ -31,6 +31,7 @@ struct UserDefaultsKeys {
     static let enableKenBurnsEffect = "enableKenBurnsEffect"
     static let enableThumbnailAnimation = "enableThumbnailAnimation"
     static let enableSlideshowShuffle = "enableSlideshowShuffle"
+    static let slideshowTransition = "slideshowTransition"
     static let allPhotosSortOrder = "allPhotosSortOrder"
     static let navigationStyle = "navigationStyle"
     static let enableTopShelf = "enableTopShelf"
@@ -56,3 +57,4 @@ struct NotificationNames {
     static let refreshAllTabs = "refreshAllTabs"
     static let startAutoSlideshow = "startAutoSlideshow"
 }
+

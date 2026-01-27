@@ -14,7 +14,7 @@ struct MemoriesDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var cityAssets: [ImmichAsset] = []
     @State private var slideshowTrigger: Bool = false
-    @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = false
+    @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = true
     
     var body: some View {
         NavigationView {

@@ -5,3 +5,8 @@ CLAUDE.local.md
 .kiro/**
 ios/**
 .claude/**
+*.md
+*.log
+*.DS_Store
+
+

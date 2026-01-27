@@ -69,13 +69,15 @@ struct SettingsView: View {
     @AppStorage("slideshowBackgroundColor") private var slideshowBackgroundColor = "white"
     @AppStorage("showTagsTab") private var showTagsTab = false
     @AppStorage("showFoldersTab") private var showFoldersTab = false
-    @AppStorage("defaultStartupTab") private var defaultStartupTab = "photos"
+    @AppStorage("defaultStartupTab") private var defaultStartupTab = "memories"
     @AppStorage("assetSortOrder") private var assetSortOrder = "desc"
     @AppStorage("use24HourClock") private var use24HourClock = true
     @AppStorage("enableReflectionsInSlideshow") private var enableReflectionsInSlideshow = true
     @AppStorage("enableKenBurnsEffect") private var enableKenBurnsEffect = false
     @AppStorage("enableThumbnailAnimation") private var enableThumbnailAnimation = false
     @AppStorage("enableSlideshowShuffle") private var enableSlideshowShuffle = false
+    @AppStorage("slideshowTransition") private var slideshowTransition = "fade"
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     @AppStorage("allPhotosSortOrder") private var allPhotosSortOrder = "desc"
     @AppStorage("navigationStyle") private var navigationStyle = NavigationStyle.tabs.rawValue
     @AppStorage("enableTopShelf", store: UserDefaults(suiteName: AppConstants.appGroupIdentifier)) private var enableTopShelf = true
@@ -293,27 +295,28 @@ struct SettingsView: View {
                                         isOn: enableThumbnailAnimation
                                     )
                                     
-                                    SettingsRow(
-                                        icon: "house",
-                                        title: "Default Startup Tab",
-                                        subtitle: "Choose which tab opens when the app starts",
-                                        content: AnyView(
-                                            Picker("Default Tab", selection: $defaultStartupTab) {
-                                                Text("All Photos").tag("photos")
-                                                Text("Albums").tag("albums")
-                                                Text("People").tag("people")
-                                                if showTagsTab {
-                                                    Text("Tags").tag("tags")
-                                                }
-                                                if showFoldersTab {
-                                                    Text("Folders").tag("folders")
-                                                }
-                                                Text("Explore").tag("explore")
-                                            }
-                                                .pickerStyle(.menu)
-                                                .frame(width: 300, alignment: .trailing)
-                                        )
-                                    )
+                                     SettingsRow(
+                                         icon: "house",
+                                         title: "Default Startup Tab",
+                                         subtitle: "Choose which tab opens when the app starts",
+                                         content: AnyView(
+                                             Picker("Default Tab", selection: $defaultStartupTab) {
+                                                 Text("Memories").tag("memories")
+                                                 Text("All Photos").tag("photos")
+                                                 Text("Albums").tag("albums")
+                                                 Text("People").tag("people")
+                                                 if showTagsTab {
+                                                     Text("Tags").tag("tags")
+                                                 }
+                                                 if showFoldersTab {
+                                                     Text("Folders").tag("folders")
+                                                 }
+                                                 Text("Explore").tag("explore")
+                                             }
+                                                 .pickerStyle(.menu)
+                                                 .frame(width: 300, alignment: .trailing)
+                                         )
+                                     )
                                     
                                     SettingsRow(
                                         icon: "rectangle.split.3x1",
@@ -426,7 +429,9 @@ struct SettingsView: View {
                                     hideOverlay: $hideImageOverlay,
                                     enableReflections: $enableReflectionsInSlideshow,
                                     enableKenBurns: $enableKenBurnsEffect,
+                                    enableMemoriesSlideshow: $enableMemoriesSlideshow,
                                     enableShuffle: $enableSlideshowShuffle,
+                                    slideshowTransition: $slideshowTransition,
                                     autoSlideshowTimeout: $autoSlideshowTimeout,
                                     isMinusFocused: $isMinusFocused,
                                     isPlusFocused: $isPlusFocused,
@@ -653,9 +658,16 @@ struct SettingsView: View {
             }
             .onChange(of: showFoldersTab) { _, newValue in
                 if !newValue && defaultStartupTab == "folders" {
-                    defaultStartupTab = "photos"
+                    defaultStartupTab = "memories"
                 }
                 
+                NotificationCenter.default.post(name: NSNotification.Name(NotificationNames.refreshAllTabs), object: nil)
+            }
+            .onChange(of: showTagsTab) { _, newValue in
+                if !newValue && defaultStartupTab == "tags" {
+                    defaultStartupTab = "memories"
+                }
+
                 NotificationCenter.default.post(name: NSNotification.Name(NotificationNames.refreshAllTabs), object: nil)
             }
             .onAppear {
@@ -790,7 +802,7 @@ struct SettingsView: View {
     
     let networkService = NetworkService(userManager: userManager)
     let authService = AuthenticationService(networkService: networkService, userManager: userManager)
-    let assetService = AssetService(networkService: networkService)
+    _ = AssetService(networkService: networkService)
     
     return SettingsView(authService: authService, userManager: userManager)
 }

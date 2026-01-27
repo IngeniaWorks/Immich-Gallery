@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum TabName: Int, CaseIterable {
+    case memories = -1
     case photos = 0
     case albums = 1
     case people = 2
@@ -19,6 +20,7 @@ enum TabName: Int, CaseIterable {
     
     var title: String {
         switch self {
+        case .memories: return "Memories"
         case .photos: return "Photos"
         case .albums: return "Albums"
         case .people: return "People"
@@ -32,6 +34,7 @@ enum TabName: Int, CaseIterable {
     
     var iconName: String {
         switch self {
+        case .memories: return "sparkles"
         case .photos: return "photo.on.rectangle"
         case .albums: return "folder"
         case .people: return "person.crop.circle"
@@ -68,7 +71,7 @@ struct ContentView: View {
     @State private var showWhatsNew = false
     @AppStorage(UserDefaultsKeys.showTagsTab) private var showTagsTab = false
     @AppStorage(UserDefaultsKeys.showFoldersTab) private var showFoldersTab = false
-    @AppStorage(UserDefaultsKeys.defaultStartupTab) private var defaultStartupTab = "photos"
+    @AppStorage(UserDefaultsKeys.defaultStartupTab) private var defaultStartupTab = "memories"
     @AppStorage(UserDefaultsKeys.lastSeenVersion) private var lastSeenVersion = ""
     @AppStorage(UserDefaultsKeys.navigationStyle) private var navigationStyle = NavigationStyle.tabs.rawValue
     @State private var searchTabHighlighted = false
@@ -103,6 +106,19 @@ struct ContentView: View {
                 } else {
                     // Main app interface
                     TabView(selection: $selectedTab) {
+                        MemoriesView(
+                            exploreService: exploreService,
+                            assetService: assetService,
+                            authService: authService,
+                            userManager: userManager
+                        )
+                        .errorBoundary(context: "Memories Tab")
+                        .tabItem {
+                            Image(systemName: TabName.memories.iconName)
+                            Text(TabName.memories.title)
+                        }
+                        .tag(TabName.memories.rawValue)
+                        
                         AssetGridView(
                             assetService: assetService, 
                             authService: authService, 
@@ -196,9 +212,16 @@ struct ContentView: View {
                     }
                     .onChange(of: showFoldersTab) { _, enabled in
                         if !enabled && selectedTab == TabName.folders.rawValue {
-                            selectedTab = TabName.photos.rawValue
+                            selectedTab = TabName.memories.rawValue
                         } else if enabled && defaultStartupTab == "folders" {
                             selectedTab = TabName.folders.rawValue
+                        }
+                    }
+                    .onChange(of: showTagsTab) { _, enabled in
+                        if !enabled && selectedTab == TabName.tags.rawValue {
+                            selectedTab = TabName.memories.rawValue
+                        } else if enabled && defaultStartupTab == "tags" {
+                            selectedTab = TabName.tags.rawValue
                         }
                     }
                     .id(refreshTrigger) // Force refresh when user switches
@@ -281,6 +304,8 @@ struct ContentView: View {
     
     private func setDefaultTab() {
         switch defaultStartupTab {
+        case "memories":
+            selectedTab = TabName.memories.rawValue
         case "photos":
             selectedTab = TabName.photos.rawValue
         case "albums":
@@ -291,13 +316,13 @@ struct ContentView: View {
             if showTagsTab {
                 selectedTab = TabName.tags.rawValue
             } else {
-                selectedTab = TabName.photos.rawValue // Default to photos if tags tab is disabled
+                selectedTab = TabName.memories.rawValue
             }
         case "folders":
             if showFoldersTab {
                 selectedTab = TabName.folders.rawValue
             } else {
-                selectedTab = TabName.photos.rawValue
+                selectedTab = TabName.memories.rawValue
             }
         case "explore":
             selectedTab = TabName.explore.rawValue
@@ -306,7 +331,7 @@ struct ContentView: View {
         case "settings":
             selectedTab = TabName.settings.rawValue
         default:
-            selectedTab = TabName.photos.rawValue
+            selectedTab = TabName.memories.rawValue
         }
     }
     
