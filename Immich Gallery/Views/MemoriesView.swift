@@ -254,9 +254,6 @@ struct MemoriesView: View {
                     Color.clear
                         .frame(height: 1) // 1px for more stability than 0
                         .id("showcaseTop")
-                        .containerRelativeFrame(.vertical, alignment: .topLeading) {
-                            length, _ in length * 0.10
-                        }
 
                     
                     showcaseSection
@@ -294,11 +291,11 @@ struct MemoriesView: View {
                 .padding(.horizontal, 60)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .focusSection()
-        .containerRelativeFrame(.vertical, alignment: .topLeading) {
-            length, _ in length * 0.70
-        }
+       // .frame(maxWidth: .infinity, alignment: .leading)
+        // .padding(.bottom, 30)
+        // .containerRelativeFrame(.vertical, alignment: .topLeading) {
+        //     length, _ in length * 0.80
+        // }
     }
     
     @ViewBuilder
@@ -330,6 +327,7 @@ struct MemoriesView: View {
             }
         )
         .padding(.horizontal)
+        .focusSection() 
     }
     
     @ViewBuilder
@@ -356,6 +354,7 @@ struct MemoriesView: View {
                     resetIdleTimer()
                 }
             )
+            .padding(.top, 3)
             .padding(.vertical)
         }
     }
