@@ -38,6 +38,13 @@ struct PauseShelfView: View {
             focusedThumbnailHeight + scrollVerticalPadding * 2
         }
 
+        static var horizontalPaddingForCentering: CGFloat {
+            // Subtracting half the thumbnail size from half the screen width
+            // This allows the first and last items to be centered in the scroll view
+            // assuming the scroll view spans the screen narrow (minus shelf padding)
+            (1920 - shelfHorizontalPadding * 2) / 2 - thumbnailSize / 2 - thumbnailPadding
+        }
+
         static var preferredHeight: CGFloat {
             shelfTopPadding + buttonSize + headerSpacing + scrollHeight + shelfBottomPadding
         }
@@ -83,10 +90,6 @@ struct PauseShelfView: View {
         .padding(.horizontal, Layout.shelfHorizontalPadding)
         .padding(.top, Layout.shelfTopPadding)
         .padding(.bottom, Layout.shelfBottomPadding)
-        .onAppear {
-            let current = viewModel.currentSlide
-            focusedTarget = current.map { .slide($0.id) } ?? .settings
-        }
         .onChange(of: showSettingsPanel) { _, newValue in
             if newValue {
                 settingsFocus = .autoplay
@@ -99,7 +102,7 @@ struct PauseShelfView: View {
         .onChange(of: focusedTarget) { _, newValue in
             guard case let .slide(slideID) = newValue else { return }
             if let index = viewModel.slides.firstIndex(where: { $0.id == slideID }) {
-                viewModel.jumpToSlide(index: index, useCrossfade: true)
+                viewModel.jumpToSlideDebounced(index: index)
             }
         }
         .onChange(of: viewModel.currentSlideIndex) {
@@ -136,12 +139,25 @@ struct PauseShelfView: View {
                             .focused($focusedTarget, equals: .slide(item.slide.id))
                     }
                 }
-                .padding(.horizontal, Layout.scrollHorizontalPadding)
+                .padding(.horizontal, Layout.horizontalPaddingForCentering)
             }
             .frame(height: Layout.scrollHeight)
             .onChange(of: focusedTarget) { _, newValue in
                 if case let .slide(slideID) = newValue {
                     withAnimation { proxy.scrollTo(slideID, anchor: .center) }
+                }
+            }
+            .task {
+                // Ensure we focus and scroll to the current slide when the shelf appears
+                if let currentID = viewModel.currentSlide?.id {
+                    focusedTarget = .slide(currentID)
+                    // Small delay to ensure the ScrollView is laid out
+                    try? await Task.sleep(nanoseconds: 100_000_000)
+                    withAnimation {
+                        proxy.scrollTo(currentID, anchor: .center)
+                    }
+                } else {
+                    focusedTarget = .settings
                 }
             }
         }

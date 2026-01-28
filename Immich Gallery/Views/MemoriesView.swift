@@ -81,9 +81,6 @@ struct MemoriesView: View {
                 mainGridContent
             }
         }
-        .fullScreenCover(isPresented: $showingStats) {
-            //StatsView(statsService: createStatsService())
-        }
         .fullScreenCover(item: $selectedExploreItem) { exploreItem in
             if enableMemoriesSlideshow {
                 MemoriesSlideshowView(
@@ -159,15 +156,22 @@ struct MemoriesView: View {
         }
         .onChange(of: isReturningFromSlideshow) { oldValue, newValue in
             if newValue {
-                // Rotate items so the one that just played is replaced
-                rotateShowcase(playedID: lastPlayedItemID)
-                
-                // Set countdown FIRST so it's ready when focus hits
-                countdownTargetDate = Date().addingTimeInterval(5)
-                
-                // Return focus to the NEW first item
-                if let firstItemID = randomizedFirstRowItems.first?.id {
-                    focusedItemID = firstItemID
+                // Delay rotation and scroll slightly to allow fullscreen cover to dismiss smoothly
+                Task {
+                    try? await Task.sleep(nanoseconds: 300_000_000) // 0.3s delay
+                    
+                    // Rotate items so the one that just played is replaced
+                    rotateShowcase(playedID: lastPlayedItemID)
+                    
+                    // Set countdown FIRST so it's ready when focus hits
+                    countdownTargetDate = Date().addingTimeInterval(5)
+                    
+                    // Return focus to the NEW first item
+                    if let firstItemID = randomizedFirstRowItems.first?.id {
+                        focusedItemID = firstItemID
+                        // Re-affirm top position after delay
+                        // Notification or direct call might be needed if handleFocusScroll doesn't catch it
+                    }
                 }
             } else {
                 countdownTargetDate = nil
@@ -179,7 +183,10 @@ struct MemoriesView: View {
             }
         }
         .onChange(of: isRemainingGridFocused) { _, newValue in
-            print("🎯 MemoriesView: Remaining grid focus state = \(newValue)")
+            withAnimation(.easeInOut(duration: 0.3)) {
+                belowFold = newValue
+                print("🎯 MemoriesView: belowFold (focus-driven) = \(belowFold)")
+            }
         }
     }
     
@@ -195,11 +202,6 @@ struct MemoriesView: View {
         .onAppear {
             let title = (focusedExploreItem ?? exploreItems.first)?.primaryTitle ?? "nil"
             print("🎯 BackgroundImageView: Initial item - \(title)")
-        }
-        .onScrollVisibilityChange { visible in
-            withAnimation {
-                belowFold = !visible
-            }
         }
     }
     
@@ -252,11 +254,14 @@ struct MemoriesView: View {
                     Color.clear
                         .frame(height: 1) // 1px for more stability than 0
                         .id("showcaseTop")
+                        .containerRelativeFrame(.vertical, alignment: .topLeading) {
+                            length, _ in length * 0.10
+                        }
+
                     
                     showcaseSection
                     
                     watchNowSection
-                    
                     remainingGridSection
                 }
             }
@@ -292,7 +297,7 @@ struct MemoriesView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .focusSection()
         .containerRelativeFrame(.vertical, alignment: .topLeading) {
-            length, _ in length * 0.50
+            length, _ in length * 0.70
         }
     }
     
@@ -347,6 +352,8 @@ struct MemoriesView: View {
                 onItemSelected: { item in
                     NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
                     selectedExploreItem = item
+                    isReturningFromSlideshow = false
+                    resetIdleTimer()
                 }
             )
             .padding(.vertical)
@@ -354,21 +361,25 @@ struct MemoriesView: View {
     }
     
     private func handleFocusScroll(proxy: ScrollViewProxy, oldValue: String?, newValue: String?) {
-        guard let newValue = newValue else {
-            print("🎯 MemoriesView: Focus cleared, skipping scroll")
-            return
-        }
+        guard let newValue = newValue else { return }
         
+        let wasInFirstRow = randomizedFirstRowItems.contains { $0.id == (oldValue ?? "") }
         let isNowInFirstRow = randomizedFirstRowItems.contains { $0.id == newValue }
         
-        // If we are in the first row, we ALWAYS want to be at the top.
-        // During fast scrolling, the system might try to pull the view up/down.
-        // We re-affirm the top position on every focus change in the row.
-        if isNowInFirstRow {
-            print("🎯 MemoriesView: Focus in first row (\(newValue)), ensuring top alignment")
-            // Use no animation or very short animation for fast scroll stability
-            proxy.scrollTo("showcaseTop", anchor: .top)
-        }
+        // Strategy: 
+        // 1. If we are RETURNING from a slideshow, always snap to top.
+        // 2. If we just ENTERED the first row from below, snap to top.
+        // 3. If we are ALREADY in the first row and moving sideways, DO NOT snap to top
+        //    to avoid "fighting" the system's horizontal focus scroll.
+        
+        // if isNowInFirstRow {
+        //     if isReturningFromSlideshow || !wasInFirstRow {
+        //         print("🎯 MemoriesView: Entering first row or returning, snapping to top")
+        //         withAnimation(.easeOut(duration: 0.3)) {
+        //             proxy.scrollTo("showcaseTop", anchor: .top)
+        //         }
+        //     }
+        // }
     }
     
     private func handleTimerComplete() {

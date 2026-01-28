@@ -263,12 +263,12 @@ struct ContentView: View {
             print("ContentView: Restarting auto-slideshow timer")
             resetInactivityTimer()
         }
-        .fullScreenCover(isPresented: $showWhatsNew) {
-            WhatsNewView(onDismiss: {
-                showWhatsNew = false
-                lastSeenVersion = getCurrentAppVersion()
-            })
-        }
+//        .fullScreenCover(isPresented: $showWhatsNew) {
+//            WhatsNewView(onDismiss: {
+//                showWhatsNew = false
+//                lastSeenVersion = getCurrentAppVersion()
+//            })
+//        }
     }
     
     // MARK: - Inactivity Timer Logic

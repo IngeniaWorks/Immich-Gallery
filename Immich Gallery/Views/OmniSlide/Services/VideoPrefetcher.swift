@@ -1,5 +1,6 @@
 import AVFoundation
 
+@MainActor
 final class VideoPrefetcher {
     static let shared = VideoPrefetcher()
     private var cachedAssets: [URL: AVURLAsset] = [:]

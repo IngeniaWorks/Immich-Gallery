@@ -9,23 +9,19 @@ struct PortraitView<Foreground: View>: View {
 
     var body: some View {
         ZStack {
-            foreground
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipped()
+            // Background: Dark material
+            Color.black
                 .ignoresSafeArea()
-                .zIndex(0)
             
             Rectangle()
                 .fill(.thickMaterial)
                 .ignoresSafeArea()
-                .zIndex(1)
-
+            
+            // Content
             foreground
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .zIndex(2)
-                .background(.ultraThinMaterial)
                 .ignoresSafeArea()
         }
     }

@@ -42,6 +42,7 @@ final class SlideshowViewModel: ObservableObject {
     private var playbackReadyTimeoutTask: Task<Void, Never>?
     private var pendingPlaybackSlideID: UUID?
     private var hasTriggeredFinish: Bool = false
+    private var transitionCleanupTask: Task<Void, Never>?
     
     private let networkService: NetworkService
 
@@ -127,10 +128,16 @@ final class SlideshowViewModel: ObservableObject {
 
     func jumpToSlide(index: Int, useCrossfade: Bool) {
         guard slides.indices.contains(index) else { return }
+        
+        // Cancel any pending debounced jump if we're doing a direct jump
+        focusDebounceTask?.cancel()
+        focusDebounceTask = nil
+        
         if useCrossfade {
-            transitionOverride = .fade
-            animationDurationOverride = 0.6
+            transitionOverride = .crossDissolve
+            animationDurationOverride = 0.8 // Increased slightly for a more premium crossfade feel
         }
+        
         transitionForChange = transitionForSlide(at: index)
         Task { @MainActor in
             await Task.yield()
@@ -144,6 +151,22 @@ final class SlideshowViewModel: ObservableObject {
             if useCrossfade {
                 scheduleTransitionOverrideReset()
             }
+        }
+    }
+
+    func jumpToSlideDebounced(index: Int) {
+        guard slides.indices.contains(index) else { return }
+        guard index != currentSlideIndex else { return }
+
+        focusDebounceTask?.cancel()
+        focusDebounceTask = Task { @MainActor in
+            // 1 second delay to balance network traffic and avoid rapid reloads
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
+            
+            guard !Task.isCancelled else { return }
+            
+            // Perform the jump with crossfade
+            jumpToSlide(index: index, useCrossfade: true)
         }
     }
 
@@ -203,6 +226,11 @@ final class SlideshowViewModel: ObservableObject {
         }
         
         transitionForChange = transitionForSlide(at: nextIndex)
+        
+        // Start transition cleanup
+        transitionCleanupTask?.cancel()
+        let duration = TransitionManager.totalDuration(for: TransitionManager.definition(for: transitionForChange, fallback: currentTransition))
+        
         Task { @MainActor in
             await Task.yield()
             previousSlideIndex = currentSlideIndex
@@ -211,6 +239,15 @@ final class SlideshowViewModel: ObservableObject {
             updateCurrentTransition()
             updatePlaybackReadinessForCurrentSlide()
             prefetchUpcomingMedia()
+            
+            // Schedule cleanup to stop using TransitionPairView and release resources (like old video players)
+            transitionCleanupTask = Task { @MainActor in
+                try? await Task.sleep(nanoseconds: UInt64((duration + 0.5) * 1_000_000_000))
+                guard !Task.isCancelled else { return }
+                print("🎬 SlideshowViewModel: Transition cleanup - clearing previousSlideIndex")
+                previousSlideIndex = -1 // Use -1 to indicate no previous slide
+            }
+            
             if trigger == .manual {
                 restartAutoplayAfterManual()
             }
@@ -231,6 +268,11 @@ final class SlideshowViewModel: ObservableObject {
     }
 
     private func transitionForSlide(at index: Int) -> TransitionType {
+        // Special case: The first image in the slideshow always appears with a fade transition
+        if index == 0 {
+            return .fade
+        }
+        
         if selectedTransition == .random {
             if transitionPlaylist.indices.contains(index) {
                 return transitionPlaylist[index]

@@ -85,27 +85,6 @@ struct TransitionPairView<Outgoing: View, Incoming: View>: View {
                 )
                 .opacity(layerOpacity(progress: incomingProgress, isOutgoing: false))
             }
-
-            if definition.type == .filmBurn {
-                // Add global flash/glow overlays
-                FilmBurnSwiftUIFallback(
-                    intensity: Float(outgoingProgress),
-                    phase: outgoingProgress,
-                    seed: outgoingFilmBurnSeed,
-                    direction: .consume
-                )
-                .blendMode(.plusLighter)
-                .allowsHitTesting(false)
-
-                FilmBurnSwiftUIFallback(
-                    intensity: Float(1.0 - incomingProgress),
-                    phase: incomingProgress,
-                    seed: incomingFilmBurnSeed,
-                    direction: .reveal
-                )
-                .blendMode(.plusLighter)
-                .allowsHitTesting(false)
-            }
         }
     }
 
