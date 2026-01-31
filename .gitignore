@@ -10,9 +10,8 @@ ios/**
 *.DS_Store
 
 # Xcode specific files
-build/
-DerivedData/
+build/**
+DerivedData/**
 *.xcuserstate
-*.xcworkspace/
-*.xcodeproj/project.xcworkspace/xcuserdata/
-*.xcodeproj/xcuserdata/
+*.xcworkspace/**
+*.xcodeproj/**
