@@ -60,4 +60,34 @@ final class VideoPrefetcher {
         item.preferredForwardBufferDuration = defaultBufferDuration
         return item
     }
+    
+    func prune(keeping keepingURLs: Set<URL>) {
+        let originalCount = cachedAssets.count
+        
+        for (url, _) in cachedAssets {
+            if !keepingURLs.contains(url) {
+                cachedAssets.removeValue(forKey: url)
+            }
+        }
+        
+        for (url, _) in cachedItems {
+            if !keepingURLs.contains(url) {
+                cachedItems.removeValue(forKey: url)
+            }
+        }
+        
+        let removedCount = originalCount - cachedAssets.count
+        if removedCount > 0 {
+            print("🧹 VideoPrefetcher: Pruned \(removedCount) videos. Retaining \(cachedAssets.count).")
+        }
+    }
+    
+    func removeAll() {
+        let count = cachedAssets.count
+        cachedAssets.removeAll()
+        cachedItems.removeAll()
+        if count > 0 {
+            print("🧹 VideoPrefetcher: Cleared all \(count) assets.")
+        }
+    }
 }

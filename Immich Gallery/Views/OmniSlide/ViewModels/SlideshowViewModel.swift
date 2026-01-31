@@ -284,6 +284,34 @@ final class SlideshowViewModel: ObservableObject {
 
     private func prefetchUpcomingMedia() {
         guard !slides.isEmpty else { return }
+        
+        // 1. Determine the "Keep Window"
+        // extensive window: current - 1 ... current + prefetchCount
+        var keepIndices = Set<Int>()
+        keepIndices.insert(currentSlideIndex)
+        
+        // Previous slide (for immediate back navigation)
+        let prevIndex = (currentSlideIndex - 1 + slides.count) % slides.count
+        keepIndices.insert(prevIndex)
+        
+        // Upcoming slides
+        for i in 1...prefetchCount {
+             let nextIndex = (currentSlideIndex + i) % slides.count
+             keepIndices.insert(nextIndex)
+        }
+        
+        let keepSlides = keepIndices.map { slides[$0] }
+        let keepURLs = Set(keepSlides.map { $0.mediaURL })
+        
+        // 2. Prune memory
+        // Run on utility queue to avoid blocking main thread, though prune is fast
+        Task.detached(priority: .background) {
+            ImageCache.shared.prune(keeping: keepURLs)
+            await VideoPrefetcher.shared.prune(keeping: keepURLs)
+        }
+        
+        // 3. Prefetch upcoming
+        // We only actively prefetch the *future* items, not the previous one (unless it was already loaded)
         guard prefetchCount > 0 else { return }
         let upcomingSlides = (1...prefetchCount).compactMap { offset -> SlideItem? in
             let index = (currentSlideIndex + offset) % slides.count
@@ -369,7 +397,27 @@ final class SlideshowViewModel: ObservableObject {
         }
     }
 
+    func cleanup() {
+        print("🎬 SlideshowViewModel: Cleanup - releasing all resources")
+        autoplayTask?.cancel()
+        autoplayTask = nil
+        focusDebounceTask?.cancel()
+        focusDebounceTask = nil
+        transitionCleanupTask?.cancel()
+        transitionCleanupTask = nil
+        playbackReadyTimeoutTask?.cancel()
+        playbackReadyTimeoutTask = nil
+        
+        ImageCache.shared.removeAll()
+        VideoPrefetcher.shared.removeAll()
+        
+        // Clear slides to ensure any held resources are dropped
+        self.slides = []
+    }
+
     deinit {
-        // Can't cancel tasks easily in deinit if they are escaping, but Task handles cancellation usually.
+        // Can't easily use async tasks here, but we can call basic cleanup
+        // Note: Task cancellation is handled by the tasks themselves if they check Task.isCancelled
+        print("🎬 SlideshowViewModel: deinit")
     }
 }
