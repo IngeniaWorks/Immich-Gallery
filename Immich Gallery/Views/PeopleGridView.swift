@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PeopleGridView: View {
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     @ObservedObject var peopleService: PeopleService
     @ObservedObject var authService: AuthenticationService
     @ObservedObject var assetService: AssetService
@@ -86,6 +87,7 @@ struct PersonPhotosView: View {
     @ObservedObject var assetService: AssetService
     @Environment(\.dismiss) private var dismiss
     @State private var personAssets: [ImmichAsset] = []
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     @State private var slideshowTrigger: Bool = false
     
     var body: some View {
@@ -132,7 +134,11 @@ struct PersonPhotosView: View {
             }
         }
         .fullScreenCover(isPresented: $slideshowTrigger) {
-            SlideshowView(albumId: nil, personId: person.id, tagId: nil, city: nil, startingIndex: 0, isFavorite: false)
+            if enableMemoriesSlideshow {
+                MemoriesSlideshowView(albumId: nil, personId: person.id, tagId: nil, city: nil, startingIndex: 0, isFavorite: false)
+            } else {
+                SlideshowView(albumId: nil, personId: person.id, tagId: nil, city: nil, startingIndex: 0, isFavorite: false)
+            }
         }
     }
     

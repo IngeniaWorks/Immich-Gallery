@@ -73,6 +73,11 @@ extension UserDefaults {
         get { bool(forKey: UserDefaultsKeys.enableSlideshowShuffle) }
         set { set(newValue, forKey: UserDefaultsKeys.enableSlideshowShuffle) }
     }
+
+    var slideshowTransition: String {
+        get { string(forKey: UserDefaultsKeys.slideshowTransition) ?? "fade" }
+        set { set(newValue, forKey: UserDefaultsKeys.slideshowTransition) }
+    }
     
     var navigationStyle: String {
         get { string(forKey: UserDefaultsKeys.navigationStyle) ?? NavigationStyle.tabs.rawValue }

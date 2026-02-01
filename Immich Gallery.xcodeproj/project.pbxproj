@@ -326,6 +326,8 @@
 			);
 			mainGroup = 2F23BA642E1234C8005C563C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F23BA6E2E1234C8005C563C /* Products */;
 			projectDirPath = "";
@@ -553,9 +555,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Immich Gallery/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Immich-Gallery-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Immich Gallery";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -563,11 +568,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Debug;
 		};
@@ -581,9 +587,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Immich Gallery/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Immich-Gallery-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Immich Gallery";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -591,11 +600,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Release;
 		};
@@ -673,17 +683,19 @@
 				CODE_SIGN_ENTITLEMENTS = TopShelfExtension/TopShelfExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopShelfExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TopShelfExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery.TopShelfExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery.TopShelfExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -698,17 +710,19 @@
 				CODE_SIGN_ENTITLEMENTS = TopShelfExtension/TopShelfExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q72AHPV83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopShelfExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TopShelfExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sanketh.dev.Immich-Gallery.TopShelfExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ingenia.dev.Immich-Gallery.TopShelfExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

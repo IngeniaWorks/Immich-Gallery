@@ -136,6 +136,7 @@ struct AlbumListView: View {
 
 
 struct AlbumDetailView: View {
+    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
     let album: ImmichAlbum
     @ObservedObject var albumService: AlbumService
     @ObservedObject var authService: AuthenticationService
@@ -185,14 +186,25 @@ struct AlbumDetailView: View {
             }
         }
         .fullScreenCover(isPresented: $slideshowTrigger) {
-            SlideshowView(
-                albumId: album.id.hasPrefix("smart_") ? nil : album.id, 
-                personId: nil, 
-                tagId: nil, 
-                city: nil,
-                startingIndex: 0,
-                isFavorite: album.id == "smart_favorites"
-            )
+            if enableMemoriesSlideshow {
+                MemoriesSlideshowView(
+                    albumId: album.id.hasPrefix("smart_") ? nil : album.id,
+                    personId: nil,
+                    tagId: nil,
+                    city: nil,
+                    startingIndex: 0,
+                    isFavorite: album.id == "smart_favorites"
+                )
+            } else {
+                SlideshowView(
+                    albumId: album.id.hasPrefix("smart_") ? nil : album.id,
+                    personId: nil,
+                    tagId: nil,
+                    city: nil,
+                    startingIndex: 0,
+                    isFavorite: album.id == "smart_favorites"
+                )
+            }
         }
         .onAppear(){
             print("Album defaul view")

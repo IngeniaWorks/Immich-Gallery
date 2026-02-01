@@ -1,20 +1,20 @@
 //
-//  ExploreDetailView.swift
+//  MemoriesDetailView.swift
 //  Immich Gallery
 //
-//  Created by mensadi-labs on 2025-09-06.
+//  Created by IngeniaWorks on
 //
 
 import SwiftUI
 
-struct ExploreDetailView: View {
-    @AppStorage("enableMemoriesSlideshow") private var enableMemoriesSlideshow = true
+struct MemoriesDetailView: View {
     let city: String
     @ObservedObject var assetService: AssetService
     @ObservedObject var authService: AuthenticationService
     @Environment(\.dismiss) private var dismiss
     @State private var cityAssets: [ImmichAsset] = []
     @State private var slideshowTrigger: Bool = false
+    @AppStorage("enableMemoriesSlideshow") var enableMemoriesSlideshow = true
     
     var body: some View {
         NavigationView {
@@ -52,7 +52,7 @@ struct ExploreDetailView: View {
                     Button("Done") {
                         dismiss()
                     }
-                    .foregroundColor(.white)
+                    .foregroundColor(.accentColor)
                 }
             }
         }
@@ -78,7 +78,7 @@ struct ExploreDetailView: View {
             }
         }
         .onAppear(){
-            print("Explore detail view for city: \(city)")
+            print("Memories detail view for city: \(city)")
         }
     }
     
@@ -94,4 +94,15 @@ struct ExploreDetailView: View {
         NotificationCenter.default.post(name: NSNotification.Name("stopAutoSlideshowTimer"), object: nil)
         slideshowTrigger = true
     }
+}
+
+#Preview {
+    let (_, _, authService, assetService, _, _, _, _) =
+        MockServiceFactory.createMockServices()
+    
+    MemoriesDetailView(
+        city: "Rotterdam",
+        assetService: assetService,
+        authService: authService
+    )
 }
