@@ -8,3 +8,10 @@ ios/**
 *.md
 *.log
 *.DS_Store
+
+# Xcode specific files
+build/**
+DerivedData/**
+*.xcuserstate
+*.xcworkspace/**
+*.xcodeproj/**
