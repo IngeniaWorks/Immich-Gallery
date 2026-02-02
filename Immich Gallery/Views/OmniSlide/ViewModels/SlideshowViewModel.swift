@@ -17,7 +17,7 @@ final class SlideshowViewModel: ObservableObject {
     }
     @Published var isPlaying: Bool = true
     @Published var selectedTransition: TransitionType = .random
-    @Published var autoplayInterval: TimeInterval = 5.0
+    @Published var autoplayInterval: TimeInterval = 8.0
     @Published private(set) var currentTransition: TransitionType = .fade
     
     var onSlideshowFinished: (() -> Void)?
@@ -28,7 +28,7 @@ final class SlideshowViewModel: ObservableObject {
     let usesCoreImageTransitions: Bool = false
     @Published private(set) var transitionCounter: Int = 0
     let prefetchCount: Int = 2
-    let shelfThumbnailPrefetchRange: Int = 5
+    let shelfThumbnailPrefetchRange: Int = 8
 
     private enum SlideAdvanceTrigger {
         case auto

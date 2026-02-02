@@ -203,6 +203,11 @@ struct MemoriesView: View {
             let title = (focusedExploreItem ?? exploreItems.first)?.primaryTitle ?? "nil"
             print("🎯 BackgroundImageView: Initial item - \(title)")
         }
+        .onScrollVisibilityChange { visible in
+            withAnimation {
+                belowFold = !visible
+            }
+        }
     }
     
     @ViewBuilder
@@ -371,14 +376,14 @@ struct MemoriesView: View {
         // 3. If we are ALREADY in the first row and moving sideways, DO NOT snap to top
         //    to avoid "fighting" the system's horizontal focus scroll.
         
-        // if isNowInFirstRow {
-        //     if isReturningFromSlideshow || !wasInFirstRow {
-        //         print("🎯 MemoriesView: Entering first row or returning, snapping to top")
-        //         withAnimation(.easeOut(duration: 0.3)) {
-        //             proxy.scrollTo("showcaseTop", anchor: .top)
-        //         }
-        //     }
-        // }
+         if isNowInFirstRow {
+             if isReturningFromSlideshow || !wasInFirstRow {
+                 print("🎯 MemoriesView: Entering first row or returning, snapping to top")
+                 withAnimation(.easeOut(duration: 0.3)) {
+                     proxy.scrollTo("showcaseTop", anchor: .top)
+                 }
+             }
+         }
     }
     
     private func handleTimerComplete() {

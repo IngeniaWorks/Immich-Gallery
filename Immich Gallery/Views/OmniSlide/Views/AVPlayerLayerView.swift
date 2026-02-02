@@ -24,7 +24,11 @@ final class PlayerView: UIView {
 
     var player: AVPlayer? {
         get { (layer as? AVPlayerLayer)?.player }
-        set { (layer as? AVPlayerLayer)?.player = newValue }
+        set { 
+            let playerLayer = layer as? AVPlayerLayer
+            playerLayer?.player = newValue 
+            playerLayer?.videoGravity = .resizeAspect
+        }
     }
 }
 #elseif canImport(AppKit)
@@ -47,7 +51,11 @@ struct AVPlayerLayerView: NSViewRepresentable {
 final class PlayerNSView: NSView {
     var player: AVPlayer? {
         get { (layer as? AVPlayerLayer)?.player }
-        set { (layer as? AVPlayerLayer)?.player = newValue }
+        set { 
+            let playerLayer = layer as? AVPlayerLayer
+            playerLayer?.player = newValue
+            playerLayer?.videoGravity = .resizeAspect
+        }
     }
 
     override init(frame frameRect: NSRect) {

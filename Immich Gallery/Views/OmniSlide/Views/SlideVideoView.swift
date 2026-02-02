@@ -17,12 +17,7 @@ struct SlideVideoView: View {
         self.networkService = networkService
         self.onPlaybackReady = onPlaybackReady
         
-        // Initialize player by checking VideoPrefetcher for indexed player items
-        let authHeaders = Self.getAuthHeaders(networkService: networkService)
-        let item = VideoPrefetcher.shared.playerItem(for: slide.mediaURL, headers: authHeaders)
-        let newPlayer = AVPlayer(playerItem: item)
-        newPlayer.automaticallyWaitsToMinimizeStalling = true
-        _player = State(initialValue: newPlayer)
+        // Removed heavy lifting from init
         _computedOrientation = State(initialValue: slide.orientation)
     }
 
@@ -44,24 +39,25 @@ struct SlideVideoView: View {
             resolveOrientation()
         }
         .onAppear {
-            player?.isMuted = !isActive
-            if isActive {
-                player?.play()
-                startPlaybackObserver()
-            }
+            setupPlayer()
         }
         .onDisappear {
             playbackObserverTask?.cancel()
             player?.pause()
             player = nil // Final cleanup when view is truly gone
         }
+        .onPlayPauseCommand(perform: {
+            //pause video
+            if player?.timeControlStatus == .playing {
+                player?.pause()
+            } else {
+                player?.play()
+            }
+        })
         .onChange(of: isActive) { active in
             if active {
                 if player == nil {
-                    let authHeaders = getAuthHeaders()
-                    let item = VideoPrefetcher.shared.playerItem(for: slide.mediaURL, headers: authHeaders)
-                    player = AVPlayer(playerItem: item)
-                    player?.automaticallyWaitsToMinimizeStalling = true
+                    setupPlayer()
                 }
                 player?.isMuted = false
                 player?.play()
@@ -72,6 +68,26 @@ struct SlideVideoView: View {
                 // Do NOT set player = nil here to preserve buffering
                 playbackObserverTask?.cancel()
             }
+        }
+    }
+    
+    private func setupPlayer() {
+        guard player == nil else { return }
+        
+        // Initialize player by checking VideoPrefetcher for indexed player items
+        let authHeaders = Self.getAuthHeaders(networkService: networkService)
+        let item = VideoPrefetcher.shared.playerItem(for: slide.mediaURL, headers: authHeaders)
+        let newPlayer = AVPlayer(playerItem: item)
+        newPlayer.automaticallyWaitsToMinimizeStalling = true
+        player = newPlayer
+        
+        if isActive {
+            newPlayer.isMuted = false
+            newPlayer.play()
+            startPlaybackObserver()
+        } else {
+            newPlayer.isMuted = true
+            newPlayer.pause()
         }
     }
 
@@ -112,17 +128,18 @@ struct SlideVideoView: View {
         Task {
             let asset = AVURLAsset(url: slide.mediaURL, options: ["AVURLAssetHTTPHeaderFieldsKey": getAuthHeaders()])
             do {
-                let track = try await asset.loadTracks(withMediaType: .video).first
-                guard let track else { return }
-                let naturalSize = try await track.load(.naturalSize)
-                let transform = try await track.load(.preferredTransform)
-                let transformed = naturalSize.applying(transform)
-                let size = CGSize(width: abs(transformed.width), height: abs(transformed.height))
-                guard size.height > 0 else { return }
-                let ratio = size.width / size.height
-                let orientation: SlideItem.Orientation = ratio >= 1.33 ? .landscape : .portrait
-                await MainActor.run {
-                    computedOrientation = orientation
+                if let track = try await asset.loadTracks(withMediaType: .video).first {
+                     let naturalSize = try await track.load(.naturalSize)
+                     let transform = try await track.load(.preferredTransform)
+                     let transformed = naturalSize.applying(transform)
+                     let size = CGSize(width: abs(transformed.width), height: abs(transformed.height))
+                     if size.height > 0 {
+                         let ratio = size.width / size.height
+                         let orientation: SlideItem.Orientation = ratio >= 1.33 ? .landscape : .portrait
+                         await MainActor.run {
+                             computedOrientation = orientation
+                         }
+                     }
                 }
             } catch {
                 return
