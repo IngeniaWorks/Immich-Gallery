@@ -105,7 +105,13 @@ struct OmniSlideshowView: View {
         }
         .focusable(true)
         .focused($slideshowFocused)
-        .onAppear { slideshowFocused = true }
+        .onAppear { 
+            slideshowFocused = true
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+        .onDisappear {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
         .ignoresSafeArea()
         .onPlayPauseCommand { togglePause() }
         .onMoveCommand { direction in
